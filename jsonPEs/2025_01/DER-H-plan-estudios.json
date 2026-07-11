@@ -145,7 +145,7 @@
   },
   "DER-15303": {
     "semestre": 3,
-    "nombre": "Derecho Constitucional I y Seminario de Teoría Política",
+    "nombre": "Derecho Constitucional Iy Seminario de Teoría Política",
     "creditos": 9,
     "prerreqs": [
       "DER-11122"
@@ -570,6 +570,46 @@
     "coreqs": [
       "CORREQ"
     ],
+    "estado": 0
+  },
+  "OPTATIVA-1": {
+    "semestre": 10,
+    "nombre": "Optativa I",
+    "creditos": 4,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-2": {
+    "semestre": 10,
+    "nombre": "Optativa II",
+    "creditos": 4,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-3": {
+    "semestre": 10,
+    "nombre": "Optativa III",
+    "creditos": 4,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-4": {
+    "semestre": 10,
+    "nombre": "Optativa IV",
+    "creditos": 4,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-5": {
+    "semestre": 10,
+    "nombre": "Optativa V",
+    "creditos": 4,
+    "prerreqs": [],
+    "coreqs": [],
     "estado": 0
   }
 }

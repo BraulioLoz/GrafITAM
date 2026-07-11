@@ -1,7 +1,7 @@
 {
   "SDI-14105": {
     "semestre": 1,
-    "nombre": "(1) Introducción a la Ingeniería",
+    "nombre": "Introducción a la Ingeniería (1)",
     "creditos": 6,
     "prerreqs": [],
     "coreqs": [],
@@ -41,7 +41,7 @@
   },
   "COM-11102": {
     "semestre": 2,
-    "nombre": "Datos Estructuras de",
+    "nombre": "Estructuras de Datos",
     "creditos": 8,
     "prerreqs": [
       "COM-11101"
@@ -95,7 +95,7 @@
   },
   "SDI-11120": {
     "semestre": 3,
-    "nombre": "Física Elementos de",
+    "nombre": "Elementos de Física",
     "creditos": 10,
     "prerreqs": [
       "MAT-14100"
@@ -240,7 +240,7 @@
   },
   "SDI-11322": {
     "semestre": 5,
-    "nombre": "Lógicos Circuitos",
+    "nombre": "Circuitos Lógicos",
     "creditos": 10,
     "prerreqs": [
       "SDI-11120",
@@ -452,7 +452,7 @@
   },
   "SDI-13782": {
     "semestre": 8,
-    "nombre": "Redes Diseño y Arquitectura de",
+    "nombre": "Diseño y Arquitectura de Redes",
     "creditos": 8,
     "prerreqs": [
       "SDI-13760"
@@ -632,6 +632,22 @@
     "prerreqs": [
       "IIO-15161"
     ],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-1": {
+    "semestre": 11,
+    "nombre": "Optativa I",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-2": {
+    "semestre": 11,
+    "nombre": "Optativa II",
+    "creditos": 6,
+    "prerreqs": [],
     "coreqs": [],
     "estado": 0
   }

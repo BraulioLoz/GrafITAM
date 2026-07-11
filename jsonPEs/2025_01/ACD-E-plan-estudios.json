@@ -198,25 +198,27 @@
     "estado": 0
   },
   "ADM-12312": {
-    "semestre": 3,
-    "nombre": "SEMESTRE CUARTO Trayectorias en Negocios II: Equipo y Liderazgo",
+    "semestre": 4,
+    "nombre": "Trayectorias en Negocios II: Equipo y Liderazgo",
     "creditos": 2,
     "prerreqs": [],
     "coreqs": [],
     "estado": 0
   },
   "ADM-14413": {
-    "semestre": 3,
+    "semestre": 4,
     "nombre": "Desarrollo de Habilidades Gerenciales",
     "creditos": 6,
     "prerreqs": [
+      "ADM-15568",
+      "ADM-12107",
       "ADM-12107"
     ],
     "coreqs": [],
     "estado": 0
   },
   "ADM-15532": {
-    "semestre": 3,
+    "semestre": 4,
     "nombre": "Finanzas Corporativas",
     "creditos": 6,
     "prerreqs": [
@@ -227,7 +229,7 @@
     "estado": 0
   },
   "DER-10022": {
-    "semestre": 3,
+    "semestre": 4,
     "nombre": "Derecho Empresarial",
     "creditos": 8,
     "prerreqs": [
@@ -239,7 +241,7 @@
     "estado": 0
   },
   "ECO-12010": {
-    "semestre": 3,
+    "semestre": 4,
     "nombre": "Principios de Macroeconomía",
     "creditos": 6,
     "prerreqs": [
@@ -249,7 +251,7 @@
     "estado": 0
   },
   "EGN-17122": {
-    "semestre": 3,
+    "semestre": 4,
     "nombre": "Ideas e Instituciones Políticas y Sociales II",
     "creditos": 6,
     "prerreqs": [
@@ -259,7 +261,7 @@
     "estado": 0
   },
   "EST-24126": {
-    "semestre": 3,
+    "semestre": 4,
     "nombre": "Cálculo de Probabilidades I",
     "creditos": 6,
     "prerreqs": [
@@ -466,18 +468,17 @@
     "estado": 0
   },
   "ACT-11303": {
-    "semestre": 7,
-    "nombre": "SEMESTRE OCTAVO Modelos Actuariales I",
+    "semestre": 8,
+    "nombre": "Modelos Actuariales I",
     "creditos": 6,
     "prerreqs": [
-      "LEN-12701",
       "ACT-11301"
     ],
     "coreqs": [],
     "estado": 0
   },
   "ADM-12350": {
-    "semestre": 7,
+    "semestre": 8,
     "nombre": "Decisiones de Negocios Basadas en Datos",
     "creditos": 6,
     "prerreqs": [
@@ -488,7 +489,7 @@
     "estado": 0
   },
   "ADM-15564": {
-    "semestre": 7,
+    "semestre": 8,
     "nombre": "Renta Fija y Derivados",
     "creditos": 6,
     "prerreqs": [
@@ -498,7 +499,7 @@
     "estado": 0
   },
   "ADM-15565": {
-    "semestre": 7,
+    "semestre": 8,
     "nombre": "Modelos Financieros y Administración de Riesgos",
     "creditos": 6,
     "prerreqs": [],
@@ -506,7 +507,7 @@
     "estado": 0
   },
   "CON-15001": {
-    "semestre": 7,
+    "semestre": 8,
     "nombre": "Impuestos Corporativos I",
     "creditos": 6,
     "prerreqs": [
@@ -516,7 +517,7 @@
     "estado": 0
   },
   "EST-14107": {
-    "semestre": 7,
+    "semestre": 8,
     "nombre": "Procesos Estocásticos I",
     "creditos": 6,
     "prerreqs": [
@@ -526,7 +527,7 @@
     "estado": 0
   },
   "MAT-24406": {
-    "semestre": 7,
+    "semestre": 8,
     "nombre": "Análisis Numérico I",
     "creditos": 8,
     "prerreqs": [

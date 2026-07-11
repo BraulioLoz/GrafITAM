@@ -6,15 +6,31 @@ Schema de salida:
 {
   "COM-11101": {
     "semestre": 1, "nombre": "Algoritmos y Programas",
-    "creditos": 9, "prerreqs": [], "coreqs": [], "optativa": false, "estado": 0
+    "creditos": 9, "prerreqs": [], "coreqs": [], "estado": 0
   }
 }
+
+Los slots de optativa de la tabla de cada semestre (ej. "Optativa de Estadistica",
+sin clave real) se agregan como materias sinteticas "OPTATIVA-1", "OPTATIVA-2", ...
+con nombre "Optativa I", "Optativa II", ..., sin prerrequisitos, en un semestre
+extra al final del plan (para que el grafo las dibuje en su propia columna final,
+desconectadas de todo) — sus creditos si cuentan para la barra de progreso.
+
+Los slots "Materia N de Area de Concentracion" (sin clave real tampoco, ej. familia
+ECD/ECO/EDF) se agregan como "AREA-N" — a diferencia de las optativas, se quedan en
+su propio semestre real (no en una columna final), porque representan una materia
+obligatoria de esa etapa del plan.
+
+Algunos PDFs (ACT/ECD/ECO/EDF) no son un solo plan: repiten un "tronco comun" mas
+2-5 secciones "AREA DE CONCENTRACION: X" completas. Cada area se separa en su
+propio archivo: {PLAN_CODE}-{AREA-SLUG}-plan-estudios.json (ver AREA_HEADER_RE).
 """
 
 import json
 import re
 import subprocess
 import sys
+import unicodedata
 from collections import defaultdict
 from pathlib import Path
 
@@ -32,6 +48,11 @@ def ensure_pdfplumber():
 
 COURSE_CODE_RE = re.compile(r'[A-Z]{2,4}-?\d{5}')
 
+# Piso esperado de materias reales por plan (sin contar optativas sintéticas) — si un
+# PDF genera menos, probablemente el parseo falló en algo (columnas corridas, formato
+# distinto, etc.) y vale la pena revisarlo a mano. No bloquea la generación, solo avisa.
+MIN_MATERIAS = 38
+
 SEMESTER_MAP = {
     'PRIMER': 1, 'SEGUNDO': 2, 'TERCER': 3, 'CUARTO': 4, 'QUINTO': 5,
     'SEXTO': 6, 'SÉPTIMO': 7, 'SEPTIMO': 7, 'SÉPTIMO': 7,
@@ -43,6 +64,14 @@ END_OF_PLAN_RE = re.compile(
     re.IGNORECASE
 )
 
+# Referencia corta en línea (ej. "**Ver notas al Plan de Estudios") que aparece al
+# final de CADA área de concentración cuando el plan repite la tabla de semestres
+# una vez por área (ej. Actuaría: Seguros/Estadística/Riesgos Financieros) — no es
+# el fin real del plan, así que no debe disparar END_OF_PLAN_RE (a diferencia del
+# encabezado real de la sección de notas, "NOTAS AL PLAN DE ESTUDIOS PARA LOS
+# ALUMNOS...", o de "SERVICIO SOCIAL", que sí marcan el fin genuino).
+INLINE_FOOTNOTE_RE = re.compile(r'^\**\s*Ver\s+notas', re.IGNORECASE)
+
 SEMESTER_RE = re.compile(
     r'(PRIMER|SEGUNDO|TERCER|CUARTO|QUINTO|SEXTO|S[ÉE]PTIMO|OCTAVO|NOVENO|D[ÉE]CIMO)\s+SEMESTRE',
     re.IGNORECASE
@@ -50,8 +79,27 @@ SEMESTER_RE = re.compile(
 
 OPTATIVAS_RE = re.compile(r'MATERIAS?\s+OPTATIVAS?', re.IGNORECASE)
 
-# Renglón de slot genérico de optativa: "Optativa I", "Optativa II (**)", etc.
-OPTATIVA_SLOT_RE = re.compile(r'^Optativas?\s*([IVXLCDM]+|\d+)?\s*(\([*]+\))?\s*$', re.IGNORECASE)
+# Renglón de slot genérico de optativa dentro de la tabla de un semestre — sin clave
+# real. Cubre "Optativa", "Optativa I/II", "Optativa 1/2", y variantes con nombre
+# como "Optativa de Estadística", "Optativa de Finanzas", "Optativa Área de
+# Concentración" (antes solo se reconocía la forma corta, y las variantes con
+# nombre se colaban al nombre de la siguiente materia real — bug ya corregido aquí).
+OPTATIVA_SLOT_RE = re.compile(r'^Optativas?(\s|$)', re.IGNORECASE)
+
+# Renglón de slot "Materia N de Área de Concentración" (ej. familia ECD/ECO/EDF) —
+# igual que una optativa, sin clave real, pero a diferencia de Optativa este slot SÍ
+# debe quedarse en su propio semestre (no en una columna final): representa una
+# materia obligatoria de esa etapa del plan que el alumno elige según su área, no
+# una optativa libre de cualquier semestre. El número ya lo trae el PDF y es estable,
+# así que se preserva tal cual en vez de renumerar.
+AREA_CONCENTRACION_SLOT_RE = re.compile(r'^Materia\s+(\d+)\s+de\s+\S*rea\s+de\s+[Cc]oncentraci', re.IGNORECASE)
+
+# Encabezado de página que abre una sección de área de concentración completa (ej.
+# familia ACT/ECD/ECO/EDF: el PDF reimprime los semestres finales una vez por área —
+# "ÁREA DE CONCENTRACIÓN: SEGUROS", luego "...: ESTADÍSTICA", etc.). Todo lo parseado
+# ANTES del primer match de este regex es el "tronco común" (compartido entre áreas,
+# tenga o no la etiqueta "TRONCO COMÚN" impresa — algunos PDFs como ADM-D no la traen).
+AREA_HEADER_RE = re.compile(r'\S*REA\s+DE\s+CONCENTRACI[OÓ]N\s*:\s*(.+)', re.IGNORECASE)
 
 HEADER_RE = re.compile(r'Prerrequisitos|Clave', re.IGNORECASE)
 
@@ -67,6 +115,28 @@ def extract_codes_from_text(text: str) -> list[str]:
     """Extrae todos los códigos de materia de un string, normalizando sin-guión."""
     raw = COURSE_CODE_RE.findall(text)
     return [normalize_code(c) for c in raw]
+
+
+_ROMAN_NUMERALS = [(50, 'L'), (40, 'XL'), (10, 'X'), (9, 'IX'), (5, 'V'), (4, 'IV'), (1, 'I')]
+
+
+def to_roman(n: int) -> str:
+    """Convierte un entero pequeño (1-99) a numeral romano — para nombrar Optativa I, II, ..."""
+    result = ''
+    for value, symbol in _ROMAN_NUMERALS:
+        while n >= value:
+            result += symbol
+            n -= value
+    return result
+
+
+def area_slug(label: str) -> str:
+    """'Riesgos Financieros' -> 'RIESGOS-FINANCIEROS', para el nombre de archivo
+    (mayúsculas sin acentos, mismo criterio ASCII que ya usa {PROGRAMA}/{LETRA} —
+    evita problemas de nombres de archivo con Unicode entre Windows/Linux/git,
+    ej. el runner de GitHub Actions corre en Ubuntu)."""
+    ascii_label = unicodedata.normalize('NFKD', label).encode('ascii', 'ignore').decode('ascii')
+    return re.sub(r'\s+', '-', ascii_label.strip().upper())
 
 
 def extract_plan_code(stem: str) -> str | None:
@@ -93,15 +163,46 @@ def group_words_by_row(words: list[dict], y_tolerance: float = 3.0) -> list[list
         if abs(word['top'] - current_y) <= y_tolerance:
             current_row.append(word)
         else:
+            # Reordenar por x0 al cerrar la fila: el orden global por 'top' exacto puede
+            # invertir dos palabras de la MISMA línea visual cuando su offset vertical
+            # difiere por un sub-píxel (ej. "SEMESTRE"/"TERCER" con top 415.6128 vs
+            # 415.6176 — ambas dentro de y_tolerance, pero en el orden global "SEMESTRE"
+            # queda primero, rompiendo la lectura izquierda-a-derecha).
+            current_row.sort(key=lambda w: w['x0'])
             rows.append(current_row)
             current_row = [word]
             current_y = word['top']
+    current_row.sort(key=lambda w: w['x0'])
     rows.append(current_row)
     return rows
 
 
 def row_text(row: list[dict]) -> str:
     return ' '.join(w['text'] for w in row)
+
+
+def merge_letter_runs(words: list[dict]) -> str:
+    """Reconstruye el texto de una lista de palabras (ya en orden x0), uniendo
+    corridas de tokens de una sola letra alfabética en una sola palabra (ej. en
+    RI-E/F/G "Optativa" viene partida en 'O','p','t','a','t','i','v','a' — el
+    espaciado entre esas letras es casi idéntico al espaciado normal entre
+    palabras en ese PDF, así que un umbral de distancia no sirve para
+    distinguirlos; se reconstruye por contenido en su lugar). Palabras normales
+    de más de un carácter quedan intactas."""
+    parts: list[str] = []
+    buffer = ''
+    for w in words:
+        t = w['text']
+        if len(t) == 1 and t.isalpha():
+            buffer += t
+        else:
+            if buffer:
+                parts.append(buffer)
+                buffer = ''
+            parts.append(t)
+    if buffer:
+        parts.append(buffer)
+    return ' '.join(parts)
 
 
 def detect_column_bounds(pdf) -> dict | None:
@@ -164,10 +265,37 @@ def _flush_stub(stub: dict | None, courses: dict, coreq_groups: dict) -> None:
             coreq_groups[(stub['semestre'], stub['marker'])].append(sid)
 
 
-def parse_pdf(pdf_path: Path, pdfplumber) -> dict:
-    """Parsea un PDF de plan de estudios y retorna el dict de materias."""
-    courses: dict[str, dict] = {}
-    coreq_groups: dict[tuple, list[str]] = defaultdict(list)
+def _new_section() -> dict:
+    """Estado independiente de una sección del plan (tronco común, o una de sus
+    áreas de concentración si el PDF las trae)."""
+    return {
+        'courses': {},
+        'coreq_groups': defaultdict(list),
+        # créditos de cada slot de optativa encontrado (sin clave real), en orden
+        'optativa_credits': [],
+        # numero (tal cual lo trae el PDF) -> (semestre, creditos) de cada slot de
+        # área de concentración; si el mismo número se repite (bloque duplicado),
+        # la última aparición gana — igual que con materias reales
+        'area_concentracion': {},
+    }
+
+
+def parse_pdf(pdf_path: Path, pdfplumber) -> dict[str | None, tuple[dict, int]]:
+    """
+    Parsea un PDF de plan de estudios. Retorna {label: (dict de materias, num.
+    materias reales)} — un solo entry con label=None si el plan no tiene áreas de
+    concentración (la inmensa mayoría), o una entry por área (sin entry para el
+    tronco solo, que no es un plan usable) si el PDF reimprime los semestres
+    finales una vez por área (ver `AREA_HEADER_RE`).
+    """
+    # sections[0] es siempre el tronco común (todo lo parseado antes de la primera
+    # "ÁREA DE CONCENTRACIÓN: X"); cada área nueva arranca como copia del tronco.
+    sections: list[tuple[str | None, dict]] = [(None, _new_section())]
+    current_section = sections[0][1]
+    courses = current_section['courses']
+    coreq_groups = current_section['coreq_groups']
+    optativa_credits = current_section['optativa_credits']
+    area_concentracion = current_section['area_concentracion']
 
     with pdfplumber.open(str(pdf_path)) as pdf:
         col = detect_column_bounds(pdf)
@@ -201,13 +329,43 @@ def parse_pdf(pdf_path: Path, pdfplumber) -> dict:
 
                 text = row_text(row)
 
-                # Fin real del plan (notas al plan, servicio social)
-                if END_OF_PLAN_RE.search(text):
+                # Fin real del plan (notas al plan, servicio social) — pero no si es
+                # solo la referencia corta en línea de fin de área de concentración
+                if END_OF_PLAN_RE.search(text) and not INLINE_FOOTNOTE_RE.match(text):
                     done = True
                     break
 
                 # Encabezado de columnas repetido entre páginas — saltar
                 if 'Prerrequisito' in text and 'Clave' in text:
+                    continue
+
+                # Encabezado de página "ÁREA DE CONCENTRACIÓN: X" — abre una sección
+                # nueva, copiada del tronco común (sections[0]), no de la sección
+                # activa (si ya veníamos de otra área, no debe heredar SUS materias).
+                m_area_header = AREA_HEADER_RE.search(text)
+                if m_area_header:
+                    _flush_stub(pending_stub, courses, coreq_groups)
+                    pending_stub = None
+                    pending_name = ''
+                    pending_prereq_words = []
+
+                    label = m_area_header.group(1).strip()
+                    tronco = sections[0][1]
+                    new_section = _new_section()
+                    new_section['courses'] = dict(tronco['courses'])
+                    new_section['coreq_groups'] = defaultdict(
+                        list, {k: list(v) for k, v in tronco['coreq_groups'].items()}
+                    )
+                    new_section['optativa_credits'] = list(tronco['optativa_credits'])
+                    new_section['area_concentracion'] = dict(tronco['area_concentracion'])
+                    sections.append((label, new_section))
+
+                    current_section = new_section
+                    courses = current_section['courses']
+                    coreq_groups = current_section['coreq_groups']
+                    optativa_credits = current_section['optativa_credits']
+                    area_concentracion = current_section['area_concentracion']
+                    current_semester = 0
                     continue
 
                 # Inicio de sección optativas: limpiar estado pendiente y saltar la sección
@@ -250,16 +408,54 @@ def parse_pdf(pdf_path: Path, pdfplumber) -> dict:
                 clave_codes = extract_codes_from_text(clave_text)
                 course_id = clave_codes[0] if clave_codes else None
 
+                # Fallback: en algunos PDFs el límite de columna calculado del header no
+                # coincide con los datos reales, y la clave de una materia cae del lado
+                # de "prerrequisitos" en vez de "clave" (ej. x0=206.88 cuando el límite
+                # calculado es 213.04 — pocos puntos de diferencia). Pasa tanto en
+                # materias sin prerrequisito (la zona de prereqs trae solo la clave)
+                # como con prerrequisito real (la zona trae [prereq...] + [clave] juntos
+                # — la clave es siempre el ÚLTIMO código, porque va inmediatamente antes
+                # del nombre). Si la zona de clave está vacía pero la fila sí tiene
+                # nombre y créditos completos, se reinterpreta el último código de la
+                # zona de prerrequisitos como la clave real — sin esto la materia se
+                # pierde por completo.
+                if not course_id and not clave_words and name_words and cred_words:
+                    prereq_codes_fallback = extract_codes_from_text(
+                        ' '.join(w['text'] for w in prereq_words)
+                    )
+                    if prereq_codes_fallback:
+                        course_id = prereq_codes_fallback[-1]
+                        # La palabra que aportó ese código ya no es un prerrequisito
+                        for i in range(len(prereq_words) - 1, -1, -1):
+                            if course_id in extract_codes_from_text(prereq_words[i]['text']):
+                                del prereq_words[i]
+                                break
+
                 if not course_id:
                     if pending_stub:
                         # Acumular información adicional en el stub existente
                         if name_words:
-                            name_text2 = ' '.join(w['text'] for w in name_words).strip()
-                            # Slot genérico de optativa — liberar stub y descartar el renglón
+                            name_text2 = merge_letter_runs(name_words).strip()
+                            # Slot genérico de optativa — liberar el stub anterior y capturar
+                            # sus créditos (el renglón en sí no tiene clave real, se descarta)
+                            m_area2 = AREA_CONCENTRACION_SLOT_RE.match(name_text2)
                             if OPTATIVA_SLOT_RE.match(name_text2):
                                 _flush_stub(pending_stub, courses, coreq_groups)
                                 pending_stub = None
                                 pending_name = ''
+                                cred_text_opt = ' '.join(w['text'] for w in cred_words)
+                                m_cred_opt = re.search(r'\d+', cred_text_opt)
+                                optativa_credits.append(int(m_cred_opt.group()) if m_cred_opt else 6)
+                            elif m_area2:
+                                _flush_stub(pending_stub, courses, coreq_groups)
+                                pending_stub = None
+                                pending_name = ''
+                                cred_text_area = ' '.join(w['text'] for w in cred_words)
+                                m_cred_area = re.search(r'\d+', cred_text_area)
+                                area_concentracion[m_area2.group(1)] = (
+                                    current_semester,
+                                    int(m_cred_area.group()) if m_cred_area else 6,
+                                )
                             else:
                                 m2 = COREQ_MARKER_RE.search(name_text2)
                                 if m2 and not pending_stub['marker']:
@@ -278,10 +474,24 @@ def parse_pdf(pdf_path: Path, pdfplumber) -> dict:
                         # El stub sigue en vuelo — se libera en la siguiente materia/semestre
                     elif name_words and not prereq_words and not clave_words:
                         # Fila de solo-nombre: puede ser el nombre de la materia siguiente
-                        raw = ' '.join(w['text'] for w in name_words).strip()
+                        raw = merge_letter_runs(name_words).strip()
                         raw = re.sub(r'\(\*+\).*$', '', raw).strip()
-                        # Ignorar slots genéricos de optativa
-                        if raw and not OPTATIVA_SLOT_RE.match(raw):
+                        m_area = AREA_CONCENTRACION_SLOT_RE.match(raw) if raw else None
+                        if raw and OPTATIVA_SLOT_RE.match(raw):
+                            # Slot genérico de optativa (no el nombre de la siguiente materia)
+                            cred_text_opt = ' '.join(w['text'] for w in cred_words)
+                            m_cred_opt = re.search(r'\d+', cred_text_opt)
+                            optativa_credits.append(int(m_cred_opt.group()) if m_cred_opt else 6)
+                        elif m_area:
+                            # Slot de "Materia N de Área de Concentración" — se queda en
+                            # el semestre actual, no es el nombre de la siguiente materia
+                            cred_text_area = ' '.join(w['text'] for w in cred_words)
+                            m_cred_area = re.search(r'\d+', cred_text_area)
+                            area_concentracion[m_area.group(1)] = (
+                                current_semester,
+                                int(m_cred_area.group()) if m_cred_area else 6,
+                            )
+                        elif raw:
                             pending_name = (pending_name + ' ' + raw).strip()
                     else:
                         # Fila de continuación de prerrequisitos
@@ -303,7 +513,7 @@ def parse_pdf(pdf_path: Path, pdfplumber) -> dict:
                 pending_prereq_words = []
 
                 # Nombre y marcador de correquisito
-                name_text = ' '.join(w['text'] for w in name_words).strip()
+                name_text = merge_letter_runs(name_words).strip()
                 marker_match = COREQ_MARKER_RE.search(name_text)
                 marker = marker_match.group(1) if marker_match else None
                 nombre = COREQ_MARKER_RE.sub('', name_text).strip()
@@ -345,17 +555,56 @@ def parse_pdf(pdf_path: Path, pdfplumber) -> dict:
                         'creditos': creditos,
                     }
 
-        # Liberar stub que quedó al final del plan
+        # Liberar stub que quedó al final del plan (de la última sección activa)
         _flush_stub(pending_stub, courses, coreq_groups)
 
-    # Aplicar correquisitos (solo si el grupo tiene >= 2 materias)
-    for group_courses in coreq_groups.values():
-        if len(group_courses) >= 2:
-            for cid in group_courses:
-                if cid in courses:
-                    courses[cid]["coreqs"] = ["CORREQ"]
+    # Si hay áreas de concentración, el tronco solo (sections[0]) no es un plan
+    # usable por sí mismo — se descarta, cada área ya trae una copia de sus materias.
+    output_sections = sections[1:] if len(sections) > 1 else sections
 
-    return courses
+    results: dict[str | None, tuple[dict, int]] = {}
+    for label, section in output_sections:
+        sec_courses = section['courses']
+        sec_coreq_groups = section['coreq_groups']
+        sec_optativa_credits = section['optativa_credits']
+        sec_area_concentracion = section['area_concentracion']
+
+        # Aplicar correquisitos (solo si el grupo tiene >= 2 materias)
+        for group_courses in sec_coreq_groups.values():
+            if len(group_courses) >= 2:
+                for cid in group_courses:
+                    if cid in sec_courses:
+                        sec_courses[cid]["coreqs"] = ["CORREQ"]
+
+        real_course_count = len(sec_courses)
+
+        # Optativas sintéticas: una columna final, desconectada, después del último semestre real
+        if sec_optativa_credits:
+            max_semestre = max((c['semestre'] for c in sec_courses.values()), default=0)
+            for i, creditos in enumerate(sec_optativa_credits, start=1):
+                sec_courses[f"OPTATIVA-{i}"] = {
+                    "semestre": max_semestre + 1,
+                    "nombre": f"Optativa {to_roman(i)}",
+                    "creditos": creditos,
+                    "prerreqs": [],
+                    "coreqs": [],
+                    "estado": 0,
+                }
+
+        # Slots de área de concentración: cada uno en su propio semestre real, desconectado
+        for numero, (semestre, creditos) in sec_area_concentracion.items():
+            sec_courses[f"AREA-{numero}"] = {
+                "semestre": semestre,
+                "nombre": f"Materia {numero} de Área de Concentración",
+                "creditos": creditos,
+                "prerreqs": [],
+                "coreqs": [],
+                "estado": 0,
+            }
+
+        results[label] = (sec_courses, real_course_count)
+
+    return results
 
 
 def main():
@@ -365,6 +614,13 @@ def main():
     output_dir = Path("jsonPEs/2025_01")
     output_dir.mkdir(parents=True, exist_ok=True)
 
+    # Limpiar salidas de corridas previas: si cambia el esquema de nombres (ej. un
+    # plan que antes era un solo archivo y ahora se separa en áreas), el archivo
+    # viejo se queda huérfano si no se borra primero — el directorio siempre debe
+    # reflejar exactamente lo que las PDFs de hoy producen.
+    for stale in output_dir.glob("*-plan-estudios.json"):
+        stale.unlink()
+
     pdf_files = sorted(input_dir.glob("*.pdf"))
     if not pdf_files:
         print(f"No se encontraron PDFs en {input_dir}/")
@@ -373,6 +629,7 @@ def main():
     ok = 0
     skipped = 0
     errors = []
+    sospechosos = []
 
     for pdf_path in pdf_files:
         plan_code = extract_plan_code(pdf_path.stem)
@@ -382,28 +639,69 @@ def main():
             continue
 
         try:
-            courses = parse_pdf(pdf_path, pdfplumber)
+            sections = parse_pdf(pdf_path, pdfplumber)
         except Exception as e:
             print(f"  ERROR {pdf_path.name}: {e}")
             errors.append(pdf_path.name)
             continue
 
-        if not courses:
+        if not sections:
             print(f"  VACIO {pdf_path.name}  (no se extrajeron materias - formato distinto?)")
             skipped += 1
             continue
 
-        output_path = output_dir / f"{plan_code}-plan-estudios.json"
-        with open(output_path, "w", encoding="utf-8") as f:
-            json.dump(courses, f, ensure_ascii=False, indent=2)
+        wrote_any = False
+        for label, (courses, real_course_count) in sections.items():
+            if real_course_count == 0:
+                continue
 
-        print(f"  OK    {pdf_path.name}  ->  {output_path.name}  ({len(courses)} materias)")
-        ok += 1
+            if label is None:
+                output_path = output_dir / f"{plan_code}-plan-estudios.json"
+                plan_label = pdf_path.name
+            else:
+                output_path = output_dir / f"{plan_code}-{area_slug(label)}-plan-estudios.json"
+                plan_label = f"{pdf_path.name} [{label.strip().title()}]"
+
+            with open(output_path, "w", encoding="utf-8") as f:
+                json.dump(courses, f, ensure_ascii=False, indent=2)
+
+            n_optativas = sum(1 for k in courses if k.startswith('OPTATIVA-'))
+            n_area = sum(1 for k in courses if k.startswith('AREA-'))
+            suffix_parts = []
+            if n_optativas:
+                suffix_parts.append(f"+{n_optativas} optativas")
+            if n_area:
+                suffix_parts.append(f"+{n_area} area de concentracion")
+            suffix = f" ({', '.join(suffix_parts)})" if suffix_parts else ""
+            print(f"  OK    {plan_label}  ->  {output_path.name}  ({real_course_count} materias{suffix})")
+            ok += 1
+            wrote_any = True
+
+            # El piso de materias cuenta el total (reales + optativas + área de
+            # concentración) — un plan optativa-pesado (ej. MA-C: 37 reales + 9
+            # optativas) no debe marcarse sospechoso solo porque tiene pocas materias
+            # con clave fija.
+            total_count = real_course_count + n_optativas + n_area
+            if total_count < MIN_MATERIAS:
+                sospechosos.append(
+                    f"{output_path.name} ({real_course_count} materias reales, {total_count} en total)"
+                )
+
+        if not wrote_any:
+            print(f"  VACIO {pdf_path.name}  (no se extrajeron materias - formato distinto?)")
+            skipped += 1
 
     print(f"\n{'-'*60}")
     print(f"Generados: {ok}  |  Omitidos: {skipped}  |  Errores: {len(errors)}")
     if errors:
         print("Con error:", ", ".join(errors))
+    if sospechosos:
+        print(
+            f"\n[!] {len(sospechosos)} plan(es) con menos de {MIN_MATERIAS} materias en total "
+            "(revisar manualmente, puede indicar un parseo fallido):"
+        )
+        for s in sospechosos:
+            print(f"   - {s}")
     print(f"JSONs en: {output_dir.resolve()}")
 
 

@@ -514,7 +514,7 @@
   },
   "ECO-14208": {
     "semestre": 8,
-    "nombre": "Seminario de Derecho Constitucional III Análisis Económico del Derecho II Modelado Computacional para Negocios",
+    "nombre": "Seminario de Derecho Constitucional III Análisis Económico del Derecho II",
     "creditos": 6,
     "prerreqs": [
       "ECO-11104"
@@ -522,6 +522,17 @@
     "coreqs": [
       "CORREQ"
     ],
+    "estado": 0
+  },
+  "COM-16303": {
+    "semestre": 8,
+    "nombre": "Modelado Computacional para Negocios",
+    "creditos": 9,
+    "prerreqs": [
+      "COM-16301",
+      "ADM-15501"
+    ],
+    "coreqs": [],
     "estado": 0
   },
   "DER-17703": {
@@ -751,6 +762,22 @@
     "prerreqs": [
       "DER-13607"
     ],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-1": {
+    "semestre": 11,
+    "nombre": "Optativa I",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-2": {
+    "semestre": 11,
+    "nombre": "Optativa II",
+    "creditos": 6,
+    "prerreqs": [],
     "coreqs": [],
     "estado": 0
   }

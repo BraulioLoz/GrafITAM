@@ -202,15 +202,15 @@
     "estado": 0
   },
   "CSO-10100": {
-    "semestre": 3,
-    "nombre": "SEMESTRE CUARTO Estado y Sociedad I",
+    "semestre": 4,
+    "nombre": "Estado y Sociedad I",
     "creditos": 6,
     "prerreqs": [],
     "coreqs": [],
     "estado": 0
   },
   "CSO-10106": {
-    "semestre": 3,
+    "semestre": 4,
     "nombre": "Instituciones Políticas Comparadas",
     "creditos": 6,
     "prerreqs": [],
@@ -218,7 +218,7 @@
     "estado": 0
   },
   "DER-10003": {
-    "semestre": 3,
+    "semestre": 4,
     "nombre": "Instituciones de Derecho Público Mexicano I",
     "creditos": 6,
     "prerreqs": [],
@@ -226,7 +226,7 @@
     "estado": 0
   },
   "ECO-11002": {
-    "semestre": 3,
+    "semestre": 4,
     "nombre": "Seminario de Análisis Empírico",
     "creditos": 3,
     "prerreqs": [
@@ -236,7 +236,7 @@
     "estado": 0
   },
   "ECO-11022": {
-    "semestre": 3,
+    "semestre": 4,
     "nombre": "Microeconomía II",
     "creditos": 6,
     "prerreqs": [
@@ -247,7 +247,7 @@
     "estado": 0
   },
   "EGN-17122": {
-    "semestre": 3,
+    "semestre": 4,
     "nombre": "Ideas e Instituciones Políticas y Sociales II",
     "creditos": 6,
     "prerreqs": [
@@ -257,7 +257,7 @@
     "estado": 0
   },
   "EST-11102": {
-    "semestre": 3,
+    "semestre": 4,
     "nombre": "Inferencia Estadística",
     "creditos": 8,
     "prerreqs": [
@@ -267,7 +267,7 @@
     "estado": 0
   },
   "MAT-12351": {
-    "semestre": 3,
+    "semestre": 4,
     "nombre": "Álgebra Lineal",
     "creditos": 4,
     "prerreqs": [
@@ -525,8 +525,8 @@
     "estado": 0
   },
   "CSO-14045": {
-    "semestre": 7,
-    "nombre": "SEMESTRE OCTAVO Política y Gobierno de México",
+    "semestre": 8,
+    "nombre": "Política y Gobierno de México",
     "creditos": 6,
     "prerreqs": [
       "CSO-10106"
@@ -535,7 +535,7 @@
     "estado": 0
   },
   "DER-10006": {
-    "semestre": 7,
+    "semestre": 8,
     "nombre": "Derecho Internacional Público II",
     "creditos": 6,
     "prerreqs": [
@@ -545,7 +545,7 @@
     "estado": 0
   },
   "ECO-10523": {
-    "semestre": 7,
+    "semestre": 8,
     "nombre": "Macroeconometría",
     "creditos": 6,
     "prerreqs": [
@@ -555,7 +555,7 @@
     "estado": 0
   },
   "ECO-14301": {
-    "semestre": 7,
+    "semestre": 8,
     "nombre": "Organización Industrial",
     "creditos": 6,
     "prerreqs": [
@@ -565,7 +565,7 @@
     "estado": 0
   },
   "ECO-17103": {
-    "semestre": 7,
+    "semestre": 8,
     "nombre": "Seminario de la Economía de Méico",
     "creditos": 6,
     "prerreqs": [
@@ -576,7 +576,7 @@
     "estado": 0
   },
   "ECO-18300": {
-    "semestre": 7,
+    "semestre": 8,
     "nombre": "Crecimiento Económico",
     "creditos": 6,
     "prerreqs": [
@@ -586,7 +586,7 @@
     "estado": 0
   },
   "EIN-16403": {
-    "semestre": 7,
+    "semestre": 8,
     "nombre": "América Latina",
     "creditos": 6,
     "prerreqs": [
@@ -596,7 +596,7 @@
     "estado": 0
   },
   "LEN-12721": {
-    "semestre": 7,
+    "semestre": 8,
     "nombre": "Comunicación Escrita para Relaciones Internacionales",
     "creditos": 2,
     "prerreqs": [

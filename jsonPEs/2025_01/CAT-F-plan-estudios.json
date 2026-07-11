@@ -561,6 +561,17 @@
     ],
     "estado": 0
   },
+  "MAT-14400": {
+    "semestre": 9,
+    "nombre": "Cálculo Numérico I",
+    "creditos": 8,
+    "prerreqs": [
+      "MAT-14310",
+      "MAT-14102"
+    ],
+    "coreqs": [],
+    "estado": 0
+  },
   "EST-24105": {
     "semestre": 10,
     "nombre": "Estadística Aplicada II",
@@ -714,6 +725,22 @@
       "EST-24105",
       "EST-14107"
     ],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-1": {
+    "semestre": 11,
+    "nombre": "Optativa I",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-2": {
+    "semestre": 11,
+    "nombre": "Optativa II",
+    "creditos": 6,
+    "prerreqs": [],
     "coreqs": [],
     "estado": 0
   }

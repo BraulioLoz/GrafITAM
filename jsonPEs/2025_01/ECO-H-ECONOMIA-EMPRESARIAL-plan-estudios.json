@@ -33,7 +33,7 @@
   },
   "LEN-12701": {
     "semestre": 1,
-    "nombre": "Estrategias de Comunicación Escrita",
+    "nombre": "Estragegias de Comunicación Escrita",
     "creditos": 6,
     "prerreqs": [],
     "coreqs": [],
@@ -358,10 +358,11 @@
     "estado": 0
   },
   "ECO-13102": {
-    "semestre": 9,
+    "semestre": 8,
     "nombre": "Economía Internacional II",
     "creditos": 6,
     "prerreqs": [
+      "ECO-22105",
       "ECO-13101",
       "ECO-12201"
     ],
@@ -410,12 +411,9 @@
   },
   "EST-11104": {
     "semestre": 6,
-    "nombre": "Avanzada I",
+    "nombre": "Econometría",
     "creditos": 7,
     "prerreqs": [
-      "ECO-21104",
-      "ECO-22105",
-      "ECO-13101",
       "EST-11102",
       "MAT-12310"
     ],
@@ -471,7 +469,6 @@
     "nombre": "Microeconomía Avanzada II",
     "creditos": 6,
     "prerreqs": [
-      "ECO-22105",
       "ECO-11121"
     ],
     "coreqs": [],
@@ -529,203 +526,123 @@
     "coreqs": [],
     "estado": 0
   },
-  "DER-16019": {
-    "semestre": 6,
-    "nombre": "Derecho del Sistema Financiero",
+  "OPTATIVA-1": {
+    "semestre": 10,
+    "nombre": "Optativa I",
     "creditos": 6,
-    "prerreqs": [
-      "DER-10113"
-    ],
+    "prerreqs": [],
     "coreqs": [],
     "estado": 0
   },
-  "ECO-10517": {
-    "semestre": 7,
-    "nombre": "Macroeconometría Aplicada",
-    "creditos": 7,
-    "prerreqs": [
-      "ECO-21104",
-      "EST-11104",
-      "ECO-21104"
-    ],
-    "coreqs": [],
-    "estado": 0
-  },
-  "ADM-15502": {
-    "semestre": 8,
-    "nombre": "Finanzas II",
-    "creditos": 7,
-    "prerreqs": [
-      "ADM-15501"
-    ],
-    "coreqs": [],
-    "estado": 0
-  },
-  "ADM-15503": {
-    "semestre": 9,
-    "nombre": "Finanzas III",
+  "OPTATIVA-2": {
+    "semestre": 10,
+    "nombre": "Optativa II",
     "creditos": 6,
-    "prerreqs": [
-      "ADM-15502"
-    ],
+    "prerreqs": [],
     "coreqs": [],
     "estado": 0
   },
-  "ADM-15528": {
-    "semestre": 9,
-    "nombre": "Instrumentos Financieros",
+  "OPTATIVA-3": {
+    "semestre": 10,
+    "nombre": "Optativa III",
     "creditos": 6,
-    "prerreqs": [
-      "ADM-15502"
-    ],
+    "prerreqs": [],
     "coreqs": [],
     "estado": 0
   },
-  "MAT-24110": {
+  "OPTATIVA-4": {
+    "semestre": 10,
+    "nombre": "Optativa IV",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "AREA-1": {
     "semestre": 5,
-    "nombre": "Análisis Matemático I",
+    "nombre": "Materia 1 de Área de Concentración",
     "creditos": 6,
-    "prerreqs": [
-      "MAT-12102"
-    ],
+    "prerreqs": [],
     "coreqs": [],
     "estado": 0
   },
-  "MAT-12210": {
+  "AREA-2": {
     "semestre": 5,
-    "nombre": "Sistemas Dinámicos",
+    "nombre": "Materia 2 de Área de Concentración",
     "creditos": 6,
-    "prerreqs": [
-      "MAT-12102"
-    ],
+    "prerreqs": [],
     "coreqs": [],
     "estado": 0
   },
-  "COM-11302": {
-    "semestre": 5,
-    "nombre": "Algorítmica y Programación",
-    "creditos": 6,
-    "prerreqs": [
-      "COM-16301"
-    ],
-    "coreqs": [],
-    "estado": 0
-  },
-  "EST-21104": {
+  "AREA-3": {
     "semestre": 6,
-    "nombre": "Fundamentos de Econometría",
+    "nombre": "Materia 3 de Área de Concentración",
     "creditos": 6,
-    "prerreqs": [
-      "EST-11102",
-      "MAT-12310"
-    ],
+    "prerreqs": [],
     "coreqs": [],
     "estado": 0
   },
-  "ECO-21111": {
+  "AREA-4": {
     "semestre": 6,
-    "nombre": "Teoría del Productor y el Consumidor",
-    "creditos": 6,
-    "prerreqs": [
-      "MAT-24110",
-      "ECO-21104"
-    ],
-    "coreqs": [],
-    "estado": 0
-  },
-  "MAT-22211": {
-    "semestre": 6,
-    "nombre": "Optimización",
-    "creditos": 6,
-    "prerreqs": [
-      "ECO-22105",
-      "MAT-24110",
-      "MAT-12210"
-    ],
-    "coreqs": [],
-    "estado": 0
-  },
-  "MAT-14400": {
-    "semestre": 6,
-    "nombre": "Cálculo Numérico I",
-    "creditos": 8,
-    "prerreqs": [
-      "MAT-12102",
-      "MAT-12310"
-    ],
-    "coreqs": [],
-    "estado": 0
-  },
-  "ECO-22112": {
-    "semestre": 7,
-    "nombre": "Macroeconomía Dinámica I",
-    "creditos": 6,
-    "prerreqs": [
-      "ECO-21111",
-      "ECO-22105"
-    ],
-    "coreqs": [],
-    "estado": 0
-  },
-  "ECO-20514": {
-    "semestre": 7,
-    "nombre": "Macroeconometría Avanzada",
+    "nombre": "Materia 4 de Área de Concentración",
     "creditos": 7,
-    "prerreqs": [
-      "MAT-12210",
-      "EST-21104"
-    ],
+    "prerreqs": [],
     "coreqs": [],
     "estado": 0
   },
-  "ECO-21112": {
+  "AREA-5": {
     "semestre": 7,
-    "nombre": "Equilibrio General",
+    "nombre": "Materia 5 de Área de Concentración",
     "creditos": 6,
-    "prerreqs": [
-      "ECO-21111"
-    ],
+    "prerreqs": [],
     "coreqs": [],
     "estado": 0
   },
-  "ECO-22113": {
-    "semestre": 8,
-    "nombre": "Macroeconomía Dinámica II",
+  "AREA-6": {
+    "semestre": 7,
+    "nombre": "Materia 6 de Área de Concentración",
     "creditos": 6,
-    "prerreqs": [
-      "ECO-22112"
-    ],
+    "prerreqs": [],
     "coreqs": [],
     "estado": 0
   },
-  "ECO-21113": {
-    "semestre": 8,
-    "nombre": "Teoría de Juegos",
+  "AREA-7": {
+    "semestre": 7,
+    "nombre": "Materia 7 de Área de Concentración",
     "creditos": 6,
-    "prerreqs": [
-      "ECO-21111"
-    ],
+    "prerreqs": [],
     "coreqs": [],
     "estado": 0
   },
-  "ECO-20513": {
+  "AREA-8": {
     "semestre": 8,
-    "nombre": "Microeconometría Avanzada",
+    "nombre": "Materia 8 de Área de Concentración",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "AREA-9": {
+    "semestre": 8,
+    "nombre": "Materia 9 de Área de Concentración",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "AREA-10": {
+    "semestre": 8,
+    "nombre": "Materia 10 de Área de Concentración",
     "creditos": 7,
-    "prerreqs": [
-      "EST-21104",
-      "ECO-21104"
-    ],
+    "prerreqs": [],
     "coreqs": [],
     "estado": 0
   },
-  "ECO-10202": {
+  "AREA-11": {
     "semestre": 9,
-    "nombre": "Seminario de Investig. Econ. II",
+    "nombre": "Materia 11 de Área de Concentración",
     "creditos": 6,
-    "prerreqs": [
-      "ECO-22113"
-    ],
+    "prerreqs": [],
     "coreqs": [],
     "estado": 0
   }

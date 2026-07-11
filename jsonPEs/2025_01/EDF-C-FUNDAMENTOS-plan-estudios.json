@@ -1,97 +1,4 @@
 {
-  "LEN-12701": {
-    "semestre": 1,
-    "nombre": "Estrategias de Comunicación Escrita",
-    "creditos": 6,
-    "prerreqs": [],
-    "coreqs": [],
-    "estado": 0
-  },
-  "LEN-12702": {
-    "semestre": 3,
-    "nombre": "Seminario de Comunicación Escrita",
-    "creditos": 2,
-    "prerreqs": [
-      "LEN-12701",
-      "LEN-12701"
-    ],
-    "coreqs": [
-      "CORREQ"
-    ],
-    "estado": 0
-  },
-  "EST-11101": {
-    "semestre": 4,
-    "nombre": "Probabilidad (1)",
-    "creditos": 8,
-    "prerreqs": [
-      "MAT-12101"
-    ],
-    "coreqs": [],
-    "estado": 0
-  },
-  "EST-11102": {
-    "semestre": 5,
-    "nombre": "Inferencia Estadística",
-    "creditos": 8,
-    "prerreqs": [
-      "EST-11101",
-      "MAT-12102"
-    ],
-    "coreqs": [],
-    "estado": 0
-  },
-  "LEN-12718": {
-    "semestre": 6,
-    "nombre": "Comunicación Escrita para Economía",
-    "creditos": 2,
-    "prerreqs": [
-      "LEN-12701"
-    ],
-    "coreqs": [
-      "CORREQ"
-    ],
-    "estado": 0
-  },
-  "LEN-12717": {
-    "semestre": 6,
-    "nombre": "Comunicación Escrita para Dir. Financ.",
-    "creditos": 2,
-    "prerreqs": [
-      "LEN-12701"
-    ],
-    "coreqs": [
-      "CORREQ"
-    ],
-    "estado": 0
-  },
-  "LEN-12757": {
-    "semestre": 10,
-    "nombre": "Comunicac. Profesional para Dir. Financ.",
-    "creditos": 2,
-    "prerreqs": [
-      "ADM-15571",
-      "LEN-12702",
-      "LEN-12717"
-    ],
-    "coreqs": [
-      "CORREQ"
-    ],
-    "estado": 0
-  },
-  "LEN-12758": {
-    "semestre": 10,
-    "nombre": "Comunicación Profesional para Economía",
-    "creditos": 2,
-    "prerreqs": [
-      "LEN-12702",
-      "LEN-12718"
-    ],
-    "coreqs": [
-      "CORREQ"
-    ],
-    "estado": 0
-  },
   "EGN-17121": {
     "semestre": 1,
     "nombre": "Ideas e Inst. Políticas y Sociales I",
@@ -120,6 +27,14 @@
     "semestre": 1,
     "nombre": "Proceso Contable",
     "creditos": 8,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "LEN-12701": {
+    "semestre": 1,
+    "nombre": "Estrategias de Comunicación Escrita",
+    "creditos": 6,
     "prerreqs": [],
     "coreqs": [],
     "estado": 0
@@ -187,6 +102,19 @@
     "prerreqs": [
       "EGN-17122",
       "EGN-17141"
+    ],
+    "coreqs": [
+      "CORREQ"
+    ],
+    "estado": 0
+  },
+  "LEN-12702": {
+    "semestre": 3,
+    "nombre": "Seminario de Comunicación Escrita",
+    "creditos": 2,
+    "prerreqs": [
+      "LEN-12701",
+      "LEN-12701"
     ],
     "coreqs": [
       "CORREQ"
@@ -288,6 +216,16 @@
     "coreqs": [],
     "estado": 0
   },
+  "EST-11101": {
+    "semestre": 4,
+    "nombre": "Probabilidad (1)",
+    "creditos": 8,
+    "prerreqs": [
+      "MAT-12101"
+    ],
+    "coreqs": [],
+    "estado": 0
+  },
   "MAT-12102": {
     "semestre": 4,
     "nombre": "Cálculo III",
@@ -331,12 +269,24 @@
     "coreqs": [],
     "estado": 0
   },
-  "MAT-24630": {
+  "EST-11102": {
     "semestre": 5,
-    "nombre": "Matemáticas Aplicadas a la Economía",
+    "nombre": "Inferencia Estadística",
+    "creditos": 8,
+    "prerreqs": [
+      "EST-11101",
+      "MAT-12102"
+    ],
+    "coreqs": [],
+    "estado": 0
+  },
+  "ADM-15531": {
+    "semestre": 6,
+    "nombre": "Mercados e Instituciones Financieras",
     "creditos": 6,
     "prerreqs": [
-      "MAT-12102"
+      "ADM-15507",
+      "ECO-12102"
     ],
     "coreqs": [],
     "estado": 0
@@ -347,29 +297,6 @@
     "creditos": 9,
     "prerreqs": [
       "COM-16301"
-    ],
-    "coreqs": [],
-    "estado": 0
-  },
-  "ADM-15531": {
-    "semestre": 5,
-    "nombre": "Mercados e Instituciones Financieras",
-    "creditos": 6,
-    "prerreqs": [
-      "ADM-15507",
-      "ECO-12102"
-    ],
-    "coreqs": [],
-    "estado": 0
-  },
-  "ADM-15514": {
-    "semestre": 7,
-    "nombre": "Administración de Portafolios de Inversión",
-    "creditos": 6,
-    "prerreqs": [
-      "ECO-22105",
-      "ADM-15531",
-      "EST-11102"
     ],
     "coreqs": [],
     "estado": 0
@@ -385,34 +312,11 @@
     "coreqs": [],
     "estado": 0
   },
-  "EST-11104": {
-    "semestre": 6,
-    "nombre": "Econometría",
-    "creditos": 6,
-    "prerreqs": [
-      "EST-11102",
-      "MAT-12310"
-    ],
-    "coreqs": [],
-    "estado": 0
-  },
-  "ECO-11121": {
-    "semestre": 6,
-    "nombre": "Microeconomía Avanzada I",
-    "creditos": 6,
-    "prerreqs": [
-      "MAT-24630",
-      "ECO-21104"
-    ],
-    "coreqs": [],
-    "estado": 0
-  },
   "ADM-15522": {
-    "semestre": 6,
+    "semestre": 7,
     "nombre": "Teoría de las Finanzas",
     "creditos": 6,
     "prerreqs": [
-      "ECO-22105",
       "ADM-15531",
       "ECO-21104"
     ],
@@ -420,12 +324,48 @@
     "estado": 0
   },
   "ECO-17103": {
-    "semestre": 6,
+    "semestre": 7,
     "nombre": "Seminario de la Econ. de México",
     "creditos": 6,
     "prerreqs": [
       "ECO-21104",
       "ECO-22105"
+    ],
+    "coreqs": [
+      "CORREQ"
+    ],
+    "estado": 0
+  },
+  "LEN-12718": {
+    "semestre": 7,
+    "nombre": "Comunicación Escrita para Economía",
+    "creditos": 2,
+    "prerreqs": [
+      "LEN-12701"
+    ],
+    "coreqs": [
+      "CORREQ"
+    ],
+    "estado": 0
+  },
+  "ADM-15532": {
+    "semestre": 7,
+    "nombre": "Finanzas Corporativas",
+    "creditos": 6,
+    "prerreqs": [
+      "ADM-15531"
+    ],
+    "coreqs": [
+      "CORREQ"
+    ],
+    "estado": 0
+  },
+  "LEN-12717": {
+    "semestre": 7,
+    "nombre": "Comunicación Escrita para Dir. Financ.",
+    "creditos": 2,
+    "prerreqs": [
+      "LEN-12701"
     ],
     "coreqs": [
       "CORREQ"
@@ -443,31 +383,19 @@
     "coreqs": [],
     "estado": 0
   },
-  "ECO-18300": {
-    "semestre": 7,
-    "nombre": "Crecimiento Económico",
+  "ADM-15514": {
+    "semestre": 8,
+    "nombre": "Administración de Portafolios de Inversión",
     "creditos": 6,
     "prerreqs": [
-      "ECO-22105",
-      "MAT-24630"
-    ],
-    "coreqs": [],
-    "estado": 0
-  },
-  "ECO-10517": {
-    "semestre": 7,
-    "nombre": "Macroeconometría Aplicada",
-    "creditos": 7,
-    "prerreqs": [
-      "ECO-21104",
-      "EST-11104",
-      "ECO-21104"
+      "ADM-15531",
+      "EST-11102"
     ],
     "coreqs": [],
     "estado": 0
   },
   "DER-10015": {
-    "semestre": 7,
+    "semestre": 8,
     "nombre": "Derecho empresarial",
     "creditos": 9,
     "prerreqs": [
@@ -477,7 +405,7 @@
     "estado": 0
   },
   "ECO-10301": {
-    "semestre": 7,
+    "semestre": 5,
     "nombre": "Historia del Análisis Económico",
     "creditos": 6,
     "prerreqs": [
@@ -487,35 +415,14 @@
     "coreqs": [],
     "estado": 0
   },
-  "ADM-15532": {
-    "semestre": 6,
-    "nombre": "Finanzas Corporativas",
-    "creditos": 6,
-    "prerreqs": [
-      "ADM-15531"
-    ],
-    "coreqs": [
-      "CORREQ"
-    ],
-    "estado": 0
-  },
   "ECO-17100": {
-    "semestre": 8,
+    "semestre": 7,
     "nombre": "Historia Económica de México",
     "creditos": 6,
     "prerreqs": [
+      "MAT-12210",
       "ECO-22105",
       "EGN-17162"
-    ],
-    "coreqs": [],
-    "estado": 0
-  },
-  "ECO-11122": {
-    "semestre": 8,
-    "nombre": "Microeconomía Avanzada II",
-    "creditos": 6,
-    "prerreqs": [
-      "ECO-11121"
     ],
     "coreqs": [],
     "estado": 0
@@ -530,28 +437,8 @@
     "coreqs": [],
     "estado": 0
   },
-  "DER-16019": {
-    "semestre": 8,
-    "nombre": "Derecho del sistema financiero",
-    "creditos": 6,
-    "prerreqs": [
-      "DER-10113"
-    ],
-    "coreqs": [],
-    "estado": 0
-  },
-  "ADM-15571": {
-    "semestre": 8,
-    "nombre": "Renta Fija",
-    "creditos": 6,
-    "prerreqs": [
-      "ADM-15532"
-    ],
-    "coreqs": [],
-    "estado": 0
-  },
   "CON-10004": {
-    "semestre": 8,
+    "semestre": 9,
     "nombre": "Combinación de Negocios",
     "creditos": 6,
     "prerreqs": [
@@ -561,57 +448,12 @@
     "coreqs": [],
     "estado": 0
   },
-  "ECO-15101": {
+  "ADM-15571": {
     "semestre": 9,
-    "nombre": "Finanzas Públicas",
+    "nombre": "Renta Fija",
     "creditos": 6,
     "prerreqs": [
-      "ECO-21104",
-      "ECO-22105"
-    ],
-    "coreqs": [],
-    "estado": 0
-  },
-  "ECO-13102": {
-    "semestre": 9,
-    "nombre": "Economía Internacional II",
-    "creditos": 6,
-    "prerreqs": [
-      "ECO-13101",
-      "ECO-12201"
-    ],
-    "coreqs": [],
-    "estado": 0
-  },
-  "CON-10005": {
-    "semestre": 9,
-    "nombre": "Análisis Financiero de la Empresa",
-    "creditos": 6,
-    "prerreqs": [
-      "CON-10004"
-    ],
-    "coreqs": [],
-    "estado": 0
-  },
-  "ADM-15533": {
-    "semestre": 9,
-    "nombre": "Modelos Financieros I",
-    "creditos": 6,
-    "prerreqs": [
-      "ADM-15514",
-      "MAT-24630"
-    ],
-    "coreqs": [],
-    "estado": 0
-  },
-  "ADM-15535": {
-    "semestre": 9,
-    "nombre": "Derivados",
-    "creditos": 6,
-    "prerreqs": [
-      "ADM-15522",
-      "ADM-15514",
-      "EST-11104"
+      "ADM-15532"
     ],
     "coreqs": [],
     "estado": 0
@@ -624,34 +466,77 @@
     "coreqs": [],
     "estado": 0
   },
+  "ECO-15101": {
+    "semestre": 10,
+    "nombre": "Finanzas Públicas",
+    "creditos": 6,
+    "prerreqs": [
+      "ECO-21104",
+      "ECO-22105"
+    ],
+    "coreqs": [],
+    "estado": 0
+  },
+  "ECO-13102": {
+    "semestre": 10,
+    "nombre": "Economía Internacional II",
+    "creditos": 6,
+    "prerreqs": [
+      "ECO-13101",
+      "ECO-12201"
+    ],
+    "coreqs": [],
+    "estado": 0
+  },
+  "CON-10005": {
+    "semestre": 10,
+    "nombre": "Análisis Financiero de la Empresa",
+    "creditos": 6,
+    "prerreqs": [
+      "CON-10004"
+    ],
+    "coreqs": [],
+    "estado": 0
+  },
+  "ADM-15535": {
+    "semestre": 9,
+    "nombre": "Derivados",
+    "creditos": 6,
+    "prerreqs": [
+      "ADM-15522",
+      "ADM-15514",
+      "EST-21104"
+    ],
+    "coreqs": [],
+    "estado": 0
+  },
+  "DER-10011": {
+    "semestre": 10,
+    "nombre": "Régimen Fiscal Mexicano para Contaduría Pública",
+    "creditos": 6,
+    "prerreqs": [
+      "DER-10015"
+    ],
+    "coreqs": [],
+    "estado": 0
+  },
   "ECO-18101": {
     "semestre": 10,
     "nombre": "Desarrollo Económico",
     "creditos": 6,
     "prerreqs": [
+      "ECO-22105",
       "ECO-21104",
       "ECO-15101"
     ],
     "coreqs": [],
     "estado": 0
   },
-  "ECO-12121": {
-    "semestre": 10,
-    "nombre": "Macroeconomía Avanzada",
-    "creditos": 6,
-    "prerreqs": [
-      "ECO-11121",
-      "ECO-13102"
-    ],
-    "coreqs": [],
-    "estado": 0
-  },
   "CON-15001": {
     "semestre": 10,
-    "nombre": "Impuestos Corporativos I",
+    "nombre": "ImpuestosCorporativos I",
     "creditos": 6,
     "prerreqs": [
-      "ECO-18300",
       "DER-10011"
     ],
     "coreqs": [],
@@ -680,23 +565,40 @@
     ],
     "estado": 0
   },
-  "DER-10011": {
-    "semestre": 9,
-    "nombre": "Régimen Fiscal Mexicano para Cont. Pública",
-    "creditos": 6,
+  "LEN-12757": {
+    "semestre": 10,
+    "nombre": "Comunicac. Profesional para Dir. Financ.",
+    "creditos": 2,
     "prerreqs": [
-      "DER-10015"
+      "ADM-15571",
+      "LEN-12702",
+      "LEN-12717"
     ],
-    "coreqs": [],
+    "coreqs": [
+      "CORREQ"
+    ],
     "estado": 0
   },
   "ECO-10204": {
     "semestre": 10,
-    "nombre": "Seminario de Investig. Econ. I (2)",
+    "nombre": "Seminario de Investig. Econ. I (4)",
     "creditos": 9,
     "prerreqs": [
       "ECO-22105",
       "ECO-21104"
+    ],
+    "coreqs": [
+      "CORREQ"
+    ],
+    "estado": 0
+  },
+  "LEN-12758": {
+    "semestre": 10,
+    "nombre": "Comunicación Profesional para Economía",
+    "creditos": 2,
+    "prerreqs": [
+      "LEN-12702",
+      "LEN-12718"
     ],
     "coreqs": [
       "CORREQ"
@@ -778,6 +680,16 @@
     "coreqs": [],
     "estado": 0
   },
+  "COM-11302": {
+    "semestre": 6,
+    "nombre": "Algorítmica y Programación",
+    "creditos": 6,
+    "prerreqs": [
+      "COM-16301"
+    ],
+    "coreqs": [],
+    "estado": 0
+  },
   "ECO-22112": {
     "semestre": 7,
     "nombre": "Macroeconomía Dinámica I (3)",
@@ -794,7 +706,6 @@
     "nombre": "Equilibrio General (3)",
     "creditos": 6,
     "prerreqs": [
-      "ADM-14413",
       "ECO-21111"
     ],
     "coreqs": [],
@@ -831,6 +742,17 @@
     "coreqs": [],
     "estado": 0
   },
+  "ADM-15533": {
+    "semestre": 9,
+    "nombre": "Modelos Financieros I",
+    "creditos": 6,
+    "prerreqs": [
+      "ADM-15514",
+      "MAT-24630"
+    ],
+    "coreqs": [],
+    "estado": 0
+  },
   "ECO-21113": {
     "semestre": 10,
     "nombre": "Teoría de Juegos (2)",
@@ -852,48 +774,91 @@
     "coreqs": [],
     "estado": 0
   },
-  "ECO-15110": {
-    "semestre": 10,
-    "nombre": "Evaluación de Proyectos",
+  "AREA-1": {
+    "semestre": 5,
+    "nombre": "Materia 1 de Área de Concentración",
     "creditos": 6,
-    "prerreqs": [
-      "ECO-21104",
-      "ECO-22105"
-    ],
+    "prerreqs": [],
     "coreqs": [],
     "estado": 0
   },
-  "ECO-10516": {
-    "semestre": 10,
-    "nombre": "Microeconometría aplicada",
+  "AREA-2": {
+    "semestre": 6,
+    "nombre": "Materia 2 de Área de Concentración",
     "creditos": 7,
-    "prerreqs": [
-      "ADM-15571",
-      "ECO-21104",
-      "ECO-22105"
-    ],
+    "prerreqs": [],
     "coreqs": [],
     "estado": 0
   },
-  "ECO-15111": {
-    "semestre": 10,
-    "nombre": "Economía Política",
+  "AREA-3": {
+    "semestre": 6,
+    "nombre": "Materia 3 de Área de Concentración",
     "creditos": 6,
-    "prerreqs": [
-      "EST-11104",
-      "ECO-21104",
-      "ECO-22105"
-    ],
+    "prerreqs": [],
     "coreqs": [],
     "estado": 0
   },
-  "ECO-14303": {
-    "semestre": 10,
-    "nombre": "Economía de la regulación",
+  "AREA-4": {
+    "semestre": 7,
+    "nombre": "Materia 4 de Área de Concentración",
+    "creditos": 7,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "AREA-5": {
+    "semestre": 7,
+    "nombre": "Materia 5 de Área de Concentración",
     "creditos": 6,
-    "prerreqs": [
-      "ECO-14301"
-    ],
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "AREA-6": {
+    "semestre": 8,
+    "nombre": "Materia 6 de Área de Concentración",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "AREA-7": {
+    "semestre": 10,
+    "nombre": "Materia 7 de Área de Concentración",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "AREA-8": {
+    "semestre": 10,
+    "nombre": "Materia 8 de Área de Concentración",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "AREA-9": {
+    "semestre": 10,
+    "nombre": "Materia 9 de Área de Concentración",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "AREA-10": {
+    "semestre": 10,
+    "nombre": "Materia 10 de Área de Concentración",
+    "creditos": 7,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "AREA-11": {
+    "semestre": 10,
+    "nombre": "Materia 11 de Área de Concentración",
+    "creditos": 6,
+    "prerreqs": [],
     "coreqs": [],
     "estado": 0
   }

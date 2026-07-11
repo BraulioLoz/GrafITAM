@@ -59,7 +59,7 @@
   },
   "EGN-17122": {
     "semestre": 2,
-    "nombre": "II Ideas e Instituc.Politic.y Soc.",
+    "nombre": "Ideas e Instituc.Politic.y Soc. II",
     "creditos": 6,
     "prerreqs": [
       "EGN-17121"
@@ -113,7 +113,7 @@
   },
   "SDI-11120": {
     "semestre": 3,
-    "nombre": "Física Elementos de",
+    "nombre": "Elementos de Física",
     "creditos": 10,
     "prerreqs": [
       "MAT-14100"
@@ -164,7 +164,7 @@
   },
   "IIO-15170": {
     "semestre": 4,
-    "nombre": "Computadora Diseño Asistido por",
+    "nombre": "Diseño Asistido por Computadora",
     "creditos": 6,
     "prerreqs": [
       "SDI-11120"
@@ -205,7 +205,7 @@
   },
   "EGN-17161": {
     "semestre": 4,
-    "nombre": "México Historia Socio-Política de",
+    "nombre": "Historia Socio-Política de México",
     "creditos": 6,
     "prerreqs": [
       "EGN-17123"
@@ -225,7 +225,7 @@
   },
   "SDI-11322": {
     "semestre": 5,
-    "nombre": "Lógicos Circuitos",
+    "nombre": "Circuitos Lógicos",
     "creditos": 10,
     "prerreqs": [
       "SDI-11120",
@@ -257,7 +257,7 @@
   },
   "SDI-12515": {
     "semestre": 5,
-    "nombre": "Sistemas Señales y",
+    "nombre": "Señales y Sistemas",
     "creditos": 8,
     "prerreqs": [
       "MAT-14101"
@@ -278,7 +278,7 @@
   },
   "IIO-13150": {
     "semestre": 5,
-    "nombre": "I Modelado y Optimización",
+    "nombre": "Modelado y Optimización I",
     "creditos": 6,
     "prerreqs": [
       "MAT-14201",
@@ -302,8 +302,8 @@
     "nombre": "Principios de Mecatrónica",
     "creditos": 10,
     "prerreqs": [
-      "COM-11102",
-      "SDI-11322"
+      "SDI-11322",
+      "COM-11102"
     ],
     "coreqs": [],
     "estado": 0
@@ -313,8 +313,8 @@
     "nombre": "Algoritmos Numéricos por Computadora",
     "creditos": 6,
     "prerreqs": [
-      "MAT-14102",
-      "COM-16203"
+      "COM-16203",
+      "MAT-14102"
     ],
     "coreqs": [],
     "estado": 0
@@ -345,15 +345,15 @@
     "nombre": "Mecánica de Sólidos",
     "creditos": 6,
     "prerreqs": [
-      "IIO-15170",
-      "MAT-14101"
+      "MAT-14101",
+      "IIO-15170"
     ],
     "coreqs": [],
     "estado": 0
   },
   "IIO-13160": {
     "semestre": 6,
-    "nombre": "II Modelado y Optimización",
+    "nombre": "Modelado y Optimización II",
     "creditos": 6,
     "prerreqs": [
       "EST-11101",
@@ -404,7 +404,7 @@
   },
   "IIO-14170": {
     "semestre": 7,
-    "nombre": "Distribución Logística y",
+    "nombre": "Logística y Distribución",
     "creditos": 6,
     "prerreqs": [
       "IIO-13150",
@@ -502,7 +502,7 @@
   },
   "IIO-15183": {
     "semestre": 9,
-    "nombre": "Robóticos Diseño de Mecanismos",
+    "nombre": "Diseño de Mecanismos Robóticos",
     "creditos": 6,
     "prerreqs": [
       "IIO-15171"
@@ -544,7 +544,7 @@
   },
   "IIO-14180": {
     "semestre": 10,
-    "nombre": "Proyectos Admón. y Evaluación de",
+    "nombre": "Admón. y Evaluación de Proyectos",
     "creditos": 6,
     "prerreqs": [
       "EST-11101"
@@ -554,7 +554,7 @@
   },
   "IIO-15195": {
     "semestre": 10,
-    "nombre": "Robóticas Celdas",
+    "nombre": "Celdas Robóticas",
     "creditos": 9,
     "prerreqs": [
       "SDI-11561"

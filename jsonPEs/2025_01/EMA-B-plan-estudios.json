@@ -49,7 +49,7 @@
   },
   "MAT-14200": {
     "semestre": 2,
-    "nombre": "Analítica Geometría",
+    "nombre": "Geometría Analítica",
     "creditos": 6,
     "prerreqs": [],
     "coreqs": [],
@@ -95,7 +95,7 @@
   },
   "MAT-14101": {
     "semestre": 3,
-    "nombre": "II Cálculo Diferencial e Integral",
+    "nombre": "Cálculo Diferencial e Integral II",
     "creditos": 8,
     "prerreqs": [
       "MAT-14100"
@@ -115,7 +115,7 @@
   },
   "MAT-14301": {
     "semestre": 3,
-    "nombre": "II Algebra Superior",
+    "nombre": "Algebra Superior II",
     "creditos": 6,
     "prerreqs": [
       "MAT-14300"
@@ -157,7 +157,7 @@
   },
   "MAT-14102": {
     "semestre": 4,
-    "nombre": "III Cálculo Diferencial e Integral",
+    "nombre": "Cálculo Diferencial e Integral III",
     "creditos": 8,
     "prerreqs": [
       "MAT-14201",
@@ -168,7 +168,7 @@
   },
   "MAT-14310": {
     "semestre": 4,
-    "nombre": "II Algebra Lineal",
+    "nombre": "Algebra Lineal II",
     "creditos": 8,
     "prerreqs": [
       "MAT-14201"
@@ -189,7 +189,7 @@
   },
   "MAT-14390": {
     "semestre": 4,
-    "nombre": "Computacional Matemática",
+    "nombre": "Matemática Computacional",
     "creditos": 8,
     "prerreqs": [
       "COM-11302",
@@ -265,7 +265,7 @@
   },
   "ECO-22105": {
     "semestre": 5,
-    "nombre": "V Economía",
+    "nombre": "Economía V",
     "creditos": 8,
     "prerreqs": [
       "ECO-21103",
@@ -297,7 +297,7 @@
   },
   "EST-14103": {
     "semestre": 6,
-    "nombre": "Matemática Estadística",
+    "nombre": "Estadística Matemática",
     "creditos": 8,
     "prerreqs": [
       "EST-14102"
@@ -340,7 +340,7 @@
   },
   "ECO-13101": {
     "semestre": 6,
-    "nombre": "I Economía Internacional",
+    "nombre": "Economía Internacional I",
     "creditos": 6,
     "prerreqs": [
       "ECO-21104",
@@ -425,7 +425,7 @@
   },
   "MAT-24410": {
     "semestre": 8,
-    "nombre": "Lineal Programación",
+    "nombre": "Programación Lineal",
     "creditos": 6,
     "prerreqs": [
       "MAT-14400"
@@ -456,7 +456,7 @@
   },
   "ECO-14301": {
     "semestre": 8,
-    "nombre": "Industrial Organización",
+    "nombre": "Organización Industrial",
     "creditos": 6,
     "prerreqs": [
       "MAT-24110",
@@ -489,7 +489,7 @@
   },
   "MAT-24500": {
     "semestre": 9,
-    "nombre": "I Investigación de Operaciones",
+    "nombre": "Investigación de Operaciones I",
     "creditos": 6,
     "prerreqs": [
       "MAT-24410"
@@ -509,7 +509,7 @@
   },
   "ECO-22112": {
     "semestre": 9,
-    "nombre": "I Macroeconomía Dinámica",
+    "nombre": "Macroeconomía Dinámica I",
     "creditos": 6,
     "prerreqs": [
       "ECO-21111",
@@ -520,7 +520,7 @@
   },
   "ECO-20513": {
     "semestre": 9,
-    "nombre": "Avanzada Microeconometría",
+    "nombre": "Microeconometría Avanzada",
     "creditos": 7,
     "prerreqs": [
       "MAT-24210",
@@ -564,7 +564,7 @@
   },
   "ECO-22113": {
     "semestre": 10,
-    "nombre": "II Macroeconomía Dinámica",
+    "nombre": "Macroeconomía Dinámica II",
     "creditos": 6,
     "prerreqs": [
       "ECO-22112"
@@ -574,7 +574,7 @@
   },
   "ECO-13102": {
     "semestre": 10,
-    "nombre": "II Economía Internacional",
+    "nombre": "Economía Internacional II",
     "creditos": 6,
     "prerreqs": [
       "ECO-13101",
@@ -585,7 +585,7 @@
   },
   "ECO-10204": {
     "semestre": 10,
-    "nombre": "I Seminario de Inv. Económica",
+    "nombre": "Seminario de Inv. Económica I",
     "creditos": 9,
     "prerreqs": [
       "ECO-22105",
@@ -601,6 +601,38 @@
     "prerreqs": [
       "ECO-22113"
     ],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-1": {
+    "semestre": 11,
+    "nombre": "Optativa I",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-2": {
+    "semestre": 11,
+    "nombre": "Optativa II",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-3": {
+    "semestre": 11,
+    "nombre": "Optativa III",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-4": {
+    "semestre": 11,
+    "nombre": "Optativa IV",
+    "creditos": 6,
+    "prerreqs": [],
     "coreqs": [],
     "estado": 0
   }

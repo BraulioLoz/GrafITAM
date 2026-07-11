@@ -59,7 +59,7 @@
   },
   "EGN-17122": {
     "semestre": 2,
-    "nombre": "II Ideas e Instituc.Politic.y Soc.",
+    "nombre": "Ideas e Instituc.Politic.y Soc. II",
     "creditos": 6,
     "prerreqs": [
       "EGN-17121"
@@ -113,7 +113,7 @@
   },
   "COM-16414": {
     "semestre": 3,
-    "nombre": "Negocios Aplicación de las TI a los",
+    "nombre": "Aplicación de las TI a los Negocios",
     "creditos": 6,
     "prerreqs": [
       "COM-11102"
@@ -223,8 +223,8 @@
     "nombre": "Historia Socio-Política de México",
     "creditos": 6,
     "prerreqs": [
-      "LEN-12702",
-      "EGN-17123"
+      "EGN-17123",
+      "LEN-12702"
     ],
     "coreqs": [],
     "estado": 0
@@ -298,7 +298,7 @@
   },
   "IIO-13150": {
     "semestre": 5,
-    "nombre": "I Modelado y Optimización",
+    "nombre": "Modelado y Optimización I",
     "creditos": 6,
     "prerreqs": [
       "MAT-14201",
@@ -399,8 +399,8 @@
     "nombre": "Comunicac. Profesional para Ing. en Neg.",
     "creditos": 2,
     "prerreqs": [
-      "LEN-12726",
-      "LEN-12702"
+      "LEN-12702",
+      "LEN-12726"
     ],
     "coreqs": [
       "CORREQ"
@@ -422,8 +422,8 @@
     "nombre": "Inversiones",
     "creditos": 6,
     "prerreqs": [
-      "ADM-11017",
-      "ADM-15507"
+      "ADM-15507",
+      "ADM-11017"
     ],
     "coreqs": [],
     "estado": 0
@@ -433,8 +433,8 @@
     "nombre": "Diseño y Cambio Organizacional",
     "creditos": 6,
     "prerreqs": [
-      "ADM-11017",
-      "ADM-14405"
+      "ADM-14405",
+      "ADM-11017"
     ],
     "coreqs": [],
     "estado": 0
@@ -444,8 +444,8 @@
     "nombre": "Investigación de Mercados",
     "creditos": 7,
     "prerreqs": [
-      "ADM-11017",
-      "ADM-16601"
+      "ADM-16601",
+      "ADM-11017"
     ],
     "coreqs": [],
     "estado": 0
@@ -472,7 +472,7 @@
   },
   "ADM-16644": {
     "semestre": 8,
-    "nombre": "Mercadotecnia Modelos de",
+    "nombre": "Modelos de Mercadotecnia",
     "creditos": 6,
     "prerreqs": [
       "ADM-16610"
@@ -485,9 +485,33 @@
     "nombre": "Seminario de titulación",
     "creditos": 6,
     "prerreqs": [
-      "ADM-16610",
-      "ADM-15510"
+      "ADM-15510",
+      "ADM-16610"
     ],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-1": {
+    "semestre": 9,
+    "nombre": "Optativa I",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-2": {
+    "semestre": 9,
+    "nombre": "Optativa II",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-3": {
+    "semestre": 9,
+    "nombre": "Optativa III",
+    "creditos": 6,
+    "prerreqs": [],
     "coreqs": [],
     "estado": 0
   }

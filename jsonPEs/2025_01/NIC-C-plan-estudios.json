@@ -59,7 +59,7 @@
   },
   "EGN-17122": {
     "semestre": 2,
-    "nombre": "II Ideas e Instituc.Politic.y Soc.",
+    "nombre": "Ideas e Instituc.Politic.y Soc. II",
     "creditos": 6,
     "prerreqs": [
       "EGN-17121"
@@ -69,7 +69,7 @@
   },
   "CON-10001": {
     "semestre": 2,
-    "nombre": "Contable Proceso",
+    "nombre": "Proceso Contable",
     "creditos": 8,
     "prerreqs": [],
     "coreqs": [],
@@ -113,7 +113,7 @@
   },
   "SDI-11120": {
     "semestre": 3,
-    "nombre": "Física Elementos de",
+    "nombre": "Elementos de Física",
     "creditos": 10,
     "prerreqs": [
       "MAT-14100"
@@ -186,7 +186,7 @@
   },
   "COM-12101": {
     "semestre": 4,
-    "nombre": "Datos Bases de",
+    "nombre": "Bases de Datos",
     "creditos": 8,
     "prerreqs": [
       "COM-11103",
@@ -232,8 +232,8 @@
     "nombre": "Historia Socio-Política de México",
     "creditos": 6,
     "prerreqs": [
-      "LEN-12702",
-      "EGN-17123"
+      "EGN-17123",
+      "LEN-12702"
     ],
     "coreqs": [],
     "estado": 0
@@ -258,7 +258,7 @@
   },
   "SDI-11322": {
     "semestre": 5,
-    "nombre": "Lógicos Circuitos",
+    "nombre": "Circuitos Lógicos",
     "creditos": 10,
     "prerreqs": [
       "SDI-11120"
@@ -321,8 +321,8 @@
     "nombre": "Principios de Mecatrónica",
     "creditos": 10,
     "prerreqs": [
-      "COM-11102",
-      "SDI-11322"
+      "SDI-11322",
+      "COM-11102"
     ],
     "coreqs": [],
     "estado": 0
@@ -332,8 +332,8 @@
     "nombre": "Algoritmos Numéricos por Computadora",
     "creditos": 6,
     "prerreqs": [
-      "MAT-14102",
-      "COM-16203"
+      "COM-16203",
+      "MAT-14102"
     ],
     "coreqs": [],
     "estado": 0
@@ -425,7 +425,7 @@
   },
   "IIO-13150": {
     "semestre": 7,
-    "nombre": "I Modelado y Optimización",
+    "nombre": "Modelado y Optimización I",
     "creditos": 6,
     "prerreqs": [
       "MAT-14201",
@@ -496,7 +496,7 @@
   },
   "ADM-11017": {
     "semestre": 8,
-    "nombre": "Pronóstico Métodos de",
+    "nombre": "Métodos de Pronóstico",
     "creditos": 7,
     "prerreqs": [
       "EST-11102",
@@ -528,7 +528,7 @@
   },
   "IIO-13160": {
     "semestre": 8,
-    "nombre": "II Modelado y Optimización",
+    "nombre": "Modelado y Optimización II",
     "creditos": 6,
     "prerreqs": [
       "ECO-11103",
@@ -554,8 +554,8 @@
     "nombre": "Diseño y Cambio Organizacional",
     "creditos": 6,
     "prerreqs": [
-      "ADM-11017",
-      "ADM-14405"
+      "ADM-14405",
+      "ADM-11017"
     ],
     "coreqs": [],
     "estado": 0
@@ -589,8 +589,8 @@
     "nombre": "Investigación de Mercados",
     "creditos": 6,
     "prerreqs": [
-      "ADM-11017",
-      "ADM-16601"
+      "ADM-16601",
+      "ADM-11017"
     ],
     "coreqs": [],
     "estado": 0
@@ -611,8 +611,8 @@
     "nombre": "Inversiones",
     "creditos": 6,
     "prerreqs": [
-      "ADM-11017",
-      "ADM-15507"
+      "ADM-15507",
+      "ADM-11017"
     ],
     "coreqs": [],
     "estado": 0
@@ -634,8 +634,8 @@
     "nombre": "Com. Profesional para Ing. en Comp.",
     "creditos": 2,
     "prerreqs": [
-      "LEN-12724",
-      "LEN-12702"
+      "LEN-12702",
+      "LEN-12724"
     ],
     "coreqs": [
       "CORREQ"
@@ -654,7 +654,7 @@
   },
   "ADM-16644": {
     "semestre": 10,
-    "nombre": "Mercadotecnia Modelos de",
+    "nombre": "Modelos de Mercadotecnia",
     "creditos": 6,
     "prerreqs": [
       "ADM-16610"
@@ -687,8 +687,8 @@
     "nombre": "Minería de Datos",
     "creditos": 6,
     "prerreqs": [
-      "ADM-11017",
-      "COM-16413"
+      "COM-16413",
+      "ADM-11017"
     ],
     "coreqs": [
       "CORREQ"
@@ -719,7 +719,7 @@
   },
   "SDI-13782": {
     "semestre": 10,
-    "nombre": "Redes Diseño y Arquitectura de",
+    "nombre": "Diseño y Arquitectura de Redes",
     "creditos": 8,
     "prerreqs": [
       "SDI-13760"

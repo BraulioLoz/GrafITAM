@@ -550,7 +550,7 @@
   },
   "LEN-12756": {
     "semestre": 9,
-    "nombre": "(A Comunicac. Profesional para C.P. y Estr. Fin.",
+    "nombre": "Comunicac. Profesional para C.P. y Estr. Fin. (A",
     "creditos": 2,
     "prerreqs": [
       "LEN-12716",
@@ -636,6 +636,38 @@
     "coreqs": [
       "CORREQ"
     ],
+    "estado": 0
+  },
+  "OPTATIVA-1": {
+    "semestre": 11,
+    "nombre": "Optativa I",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-2": {
+    "semestre": 11,
+    "nombre": "Optativa II",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-3": {
+    "semestre": 11,
+    "nombre": "Optativa III",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-4": {
+    "semestre": 11,
+    "nombre": "Optativa IV",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
     "estado": 0
   }
 }

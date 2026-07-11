@@ -238,12 +238,10 @@
     "estado": 0
   },
   "EIN-15302": {
-    "semestre": 5,
-    "nombre": "Proceso Político en E.U.A.: Dimensión Internacional",
+    "semestre": 7,
+    "nombre": "EIN-17303 Relaciones México-EUA-Canadá",
     "creditos": 6,
-    "prerreqs": [
-      "EIN-14302"
-    ],
+    "prerreqs": [],
     "coreqs": [],
     "estado": 0
   },
@@ -289,13 +287,13 @@
     "estado": 0
   },
   "EIN-15105": {
-    "semestre": 5,
-    "nombre": "Política de Rel. Eco. Internacionales",
+    "semestre": 7,
+    "nombre": "EIN-17403 Japón, China y el Sudeste Asiático",
     "creditos": 6,
-    "prerreqs": [
-      "EIN-14102"
+    "prerreqs": [],
+    "coreqs": [
+      "CORREQ"
     ],
-    "coreqs": [],
     "estado": 0
   },
   "LEN-12721": {
@@ -303,10 +301,11 @@
     "nombre": "Comunicación Escrita para Relaciones Internacs.",
     "creditos": 2,
     "prerreqs": [
-      "EIN-15105",
       "LEN-12701"
     ],
-    "coreqs": [],
+    "coreqs": [
+      "CORREQ"
+    ],
     "estado": 0
   },
   "DER-10005": {
@@ -330,13 +329,13 @@
     "estado": 0
   },
   "CSO-13041": {
-    "semestre": 6,
-    "nombre": "Política Mexicana Contemp.",
+    "semestre": 7,
+    "nombre": "EIN-17304 Formul. de la Polít. Ext.de México",
     "creditos": 6,
-    "prerreqs": [
-      "EGN-17162"
+    "prerreqs": [],
+    "coreqs": [
+      "CORREQ"
     ],
-    "coreqs": [],
     "estado": 0
   },
   "ECO-13101": {
@@ -350,27 +349,23 @@
     "estado": 0
   },
   "DER-10006": {
-    "semestre": 7,
-    "nombre": "Derecho Internacional Público II",
+    "semestre": 8,
+    "nombre": "EIN-18602 Seminario de Titulación (1)",
     "creditos": 6,
     "prerreqs": [
-      "EIN-15302",
-      "DER-10005"
+      "EST-13101"
     ],
     "coreqs": [],
     "estado": 0
   },
   "CSO-14021": {
     "semestre": 7,
-    "nombre": "EIN-19414 Medio Oriente Política Comparada I EIN-17304 Formul. de la Polít. Ext.de México",
+    "nombre": "EIN-19414 Medio Oriente Política Comparada I",
     "creditos": 6,
     "prerreqs": [
-      "EIN-15105",
       "CSO-13041"
     ],
-    "coreqs": [
-      "CORREQ"
-    ],
+    "coreqs": [],
     "estado": 0
   },
   "LEN-12761": {
@@ -384,6 +379,46 @@
     "coreqs": [
       "CORREQ"
     ],
+    "estado": 0
+  },
+  "OPTATIVA-1": {
+    "semestre": 9,
+    "nombre": "Optativa I",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-2": {
+    "semestre": 9,
+    "nombre": "Optativa II",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-3": {
+    "semestre": 9,
+    "nombre": "Optativa III",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-4": {
+    "semestre": 9,
+    "nombre": "Optativa IV",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-5": {
+    "semestre": 9,
+    "nombre": "Optativa V",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
     "estado": 0
   }
 }

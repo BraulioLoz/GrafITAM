@@ -1,4 +1,44 @@
 {
+  "ADM-12107": {
+    "semestre": 1,
+    "nombre": "Estrategia de Negocios I: Estrategia Competitiva",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "ECO-11101": {
+    "semestre": 1,
+    "nombre": "Economía I",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "EGN-17121": {
+    "semestre": 1,
+    "nombre": "Ideas e Instituciones Políticas y Sociales I",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "EGN-17141": {
+    "semestre": 1,
+    "nombre": "Problemas de la Civilización Contemporánea I",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "LEN-12701": {
+    "semestre": 1,
+    "nombre": "Estrategias de Comunicación Escrita",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
   "ADM-12108": {
     "semestre": 2,
     "nombre": "Estrategia de Negocios II: Análisis Estratégico",
@@ -205,8 +245,8 @@
     "estado": 0
   },
   "ADM-15501": {
-    "semestre": 4,
-    "nombre": "SEMESTRE QUINTO Finanzas I: Finanzas Corporativas",
+    "semestre": 5,
+    "nombre": "Finanzas I: Finanzas Corporativas",
     "creditos": 7,
     "prerreqs": [
       "EST-10102",
@@ -217,7 +257,7 @@
     "estado": 0
   },
   "ADM-16601": {
-    "semestre": 4,
+    "semestre": 5,
     "nombre": "Mercadotecnia I: Fundamentos de Mercadotecnia",
     "creditos": 6,
     "prerreqs": [
@@ -227,7 +267,7 @@
     "estado": 0
   },
   "ADM-11101": {
-    "semestre": 4,
+    "semestre": 5,
     "nombre": "Pronósticos de Negocios",
     "creditos": 7,
     "prerreqs": [
@@ -238,7 +278,7 @@
     "estado": 0
   },
   "ADM-14402": {
-    "semestre": 4,
+    "semestre": 5,
     "nombre": "Comportamiento Humano II: Administración de Recursos Humanos",
     "creditos": 6,
     "prerreqs": [
@@ -248,7 +288,7 @@
     "estado": 0
   },
   "DER-10018": {
-    "semestre": 4,
+    "semestre": 5,
     "nombre": "Derecho Empresarial I",
     "creditos": 6,
     "prerreqs": [],
@@ -256,7 +296,7 @@
     "estado": 0
   },
   "EGN-17162": {
-    "semestre": 4,
+    "semestre": 5,
     "nombre": "Probl. de la Real. Mex. Contemp.",
     "creditos": 6,
     "prerreqs": [
@@ -409,8 +449,8 @@
     "nombre": "Comunicación Profesional para Administración",
     "creditos": 2,
     "prerreqs": [
-      "LEN-12714",
-      "LEN-12702"
+      "LEN-12702",
+      "LEN-12714"
     ],
     "coreqs": [
       "CORREQ"
@@ -425,6 +465,38 @@
       "CON-14109",
       "DER-10021"
     ],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-1": {
+    "semestre": 9,
+    "nombre": "Optativa I",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-2": {
+    "semestre": 9,
+    "nombre": "Optativa II",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-3": {
+    "semestre": 9,
+    "nombre": "Optativa III",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-4": {
+    "semestre": 9,
+    "nombre": "Optativa IV",
+    "creditos": 6,
+    "prerreqs": [],
     "coreqs": [],
     "estado": 0
   }

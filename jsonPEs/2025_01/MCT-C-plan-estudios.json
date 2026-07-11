@@ -94,8 +94,8 @@
     "estado": 0
   },
   "SDI-11120": {
-    "semestre": 2,
-    "nombre": "SEMESTRE TERCER Elementos de Física",
+    "semestre": 3,
+    "nombre": "Elementos de Física",
     "creditos": 10,
     "prerreqs": [
       "MAT-14100"
@@ -104,7 +104,7 @@
     "estado": 0
   },
   "MAT-14101": {
-    "semestre": 2,
+    "semestre": 3,
     "nombre": "Cálculo Diferencial e Integral II",
     "creditos": 8,
     "prerreqs": [
@@ -114,7 +114,7 @@
     "estado": 0
   },
   "IIO-15140": {
-    "semestre": 2,
+    "semestre": 3,
     "nombre": "Ciencias de los Materiales",
     "creditos": 9,
     "prerreqs": [
@@ -124,7 +124,7 @@
     "estado": 0
   },
   "COM-16203": {
-    "semestre": 2,
+    "semestre": 3,
     "nombre": "Desarrollo de Aplicaciones Informáticas",
     "creditos": 8,
     "prerreqs": [
@@ -134,7 +134,7 @@
     "estado": 0
   },
   "CON-10100": {
-    "semestre": 2,
+    "semestre": 3,
     "nombre": "Contabilidad I",
     "creditos": 6,
     "prerreqs": [],
@@ -142,7 +142,7 @@
     "estado": 0
   },
   "EGN-17142": {
-    "semestre": 2,
+    "semestre": 3,
     "nombre": "Probls. de la Civilización Contemporánea II",
     "creditos": 6,
     "prerreqs": [
@@ -152,7 +152,7 @@
     "estado": 0
   },
   "EGN-17123": {
-    "semestre": 2,
+    "semestre": 3,
     "nombre": "Ideas e Institucs. Políticas y Sociales III",
     "creditos": 6,
     "prerreqs": [
@@ -163,18 +163,17 @@
     "estado": 0
   },
   "SDI-11221": {
-    "semestre": 2,
-    "nombre": "SEMESTRE CUARTO Elementos de Electrónica",
+    "semestre": 4,
+    "nombre": "Elementos de Electrónica",
     "creditos": 10,
     "prerreqs": [
-      "LEN-10131",
       "SDI-11120"
     ],
     "coreqs": [],
     "estado": 0
   },
   "MAT-14102": {
-    "semestre": 2,
+    "semestre": 4,
     "nombre": "Cálculo Diferencial e Integral III",
     "creditos": 8,
     "prerreqs": [
@@ -185,7 +184,7 @@
     "estado": 0
   },
   "ECO-11101": {
-    "semestre": 2,
+    "semestre": 4,
     "nombre": "Economía I",
     "creditos": 6,
     "prerreqs": [],
@@ -193,7 +192,7 @@
     "estado": 0
   },
   "IIO-15170": {
-    "semestre": 2,
+    "semestre": 4,
     "nombre": "Diseño Asistido por Computadora",
     "creditos": 6,
     "prerreqs": [
@@ -203,7 +202,7 @@
     "estado": 0
   },
   "EGN-17161": {
-    "semestre": 2,
+    "semestre": 4,
     "nombre": "Historia Socio-Política de México",
     "creditos": 6,
     "prerreqs": [
@@ -213,7 +212,7 @@
     "estado": 0
   },
   "EST-11101": {
-    "semestre": 2,
+    "semestre": 4,
     "nombre": "Probabilidad",
     "creditos": 8,
     "prerreqs": [
@@ -399,8 +398,8 @@
     "estado": 0
   },
   "IIO-15195": {
-    "semestre": 7,
-    "nombre": "SEMESTRE OCTAVO Celdas Robóticas",
+    "semestre": 8,
+    "nombre": "Celdas Robóticas",
     "creditos": 9,
     "prerreqs": [
       "SDI-11561"
@@ -409,7 +408,7 @@
     "estado": 0
   },
   "COM-14104": {
-    "semestre": 7,
+    "semestre": 8,
     "nombre": "Sistemas Operativos",
     "creditos": 8,
     "prerreqs": [
@@ -419,7 +418,7 @@
     "estado": 0
   },
   "IIO-12190": {
-    "semestre": 7,
+    "semestre": 8,
     "nombre": "Manufactura Integrada por Computadora",
     "creditos": 6,
     "prerreqs": [
@@ -429,7 +428,7 @@
     "estado": 0
   },
   "IIO-15196": {
-    "semestre": 7,
+    "semestre": 8,
     "nombre": "Sistemas Mecatrónicos",
     "creditos": 6,
     "prerreqs": [
@@ -440,9 +439,25 @@
     "estado": 0
   },
   "SDI-15816": {
-    "semestre": 7,
+    "semestre": 8,
     "nombre": "Seminario de Titulación",
     "creditos": 4,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-1": {
+    "semestre": 9,
+    "nombre": "Optativa I",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-2": {
+    "semestre": 9,
+    "nombre": "Optativa II",
+    "creditos": 6,
     "prerreqs": [],
     "coreqs": [],
     "estado": 0

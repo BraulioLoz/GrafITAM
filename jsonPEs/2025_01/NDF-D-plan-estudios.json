@@ -342,7 +342,7 @@
   },
   "ADM-16601": {
     "semestre": 6,
-    "nombre": "Mercadotecnia I M",
+    "nombre": "Mercadotecnia IM",
     "creditos": 6,
     "prerreqs": [
       "ECO-21103",
@@ -680,6 +680,14 @@
       "ADM-15514",
       "CON-10005"
     ],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-1": {
+    "semestre": 11,
+    "nombre": "Optativa I",
+    "creditos": 6,
+    "prerreqs": [],
     "coreqs": [],
     "estado": 0
   }

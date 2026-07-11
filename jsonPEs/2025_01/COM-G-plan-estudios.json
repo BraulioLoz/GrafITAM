@@ -314,9 +314,7 @@
     "prerreqs": [
       "COM-16203"
     ],
-    "coreqs": [
-      "CORREQ"
-    ],
+    "coreqs": [],
     "estado": 0
   },
   "MAT-14301": {
@@ -350,8 +348,8 @@
     "estado": 0
   },
   "SDI-13760": {
-    "semestre": 6,
-    "nombre": "SEMESTRE SÉPTIMO Redes de Computadoras",
+    "semestre": 7,
+    "nombre": "Redes de Computadoras",
     "creditos": 10,
     "prerreqs": [
       "MAT-14102"
@@ -360,19 +358,17 @@
     "estado": 0
   },
   "SDI-24810": {
-    "semestre": 6,
+    "semestre": 7,
     "nombre": "Sistemas de Comercio Electrónico",
     "creditos": 8,
     "prerreqs": [
       "COM-12101"
     ],
-    "coreqs": [
-      "CORREQ"
-    ],
+    "coreqs": [],
     "estado": 0
   },
   "COM-11107": {
-    "semestre": 6,
+    "semestre": 7,
     "nombre": "Organización y Programación de Comp.",
     "creditos": 8,
     "prerreqs": [
@@ -382,7 +378,7 @@
     "estado": 0
   },
   "COM-22104": {
-    "semestre": 6,
+    "semestre": 7,
     "nombre": "Ingeniería de Software",
     "creditos": 6,
     "prerreqs": [
@@ -425,6 +421,38 @@
     "semestre": 8,
     "nombre": "Seminario de Titulación",
     "creditos": 4,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-1": {
+    "semestre": 9,
+    "nombre": "Optativa I",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-2": {
+    "semestre": 9,
+    "nombre": "Optativa II",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-3": {
+    "semestre": 9,
+    "nombre": "Optativa III",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-4": {
+    "semestre": 9,
+    "nombre": "Optativa IV",
+    "creditos": 6,
     "prerreqs": [],
     "coreqs": [],
     "estado": 0

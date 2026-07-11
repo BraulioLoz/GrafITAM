@@ -500,39 +500,6 @@
     ],
     "estado": 0
   },
-  "MAT-24100": {
-    "semestre": 6,
-    "nombre": "Principios de Análisis Real",
-    "creditos": 6,
-    "prerreqs": [
-      "MAT-12221"
-    ],
-    "coreqs": [],
-    "estado": 0
-  },
-  "ECO-21111": {
-    "semestre": 7,
-    "nombre": "Teoría del Consumidor y Productor",
-    "creditos": 6,
-    "prerreqs": [
-      "ECO-11023",
-      "ECO-12012"
-    ],
-    "coreqs": [],
-    "estado": 0
-  },
-  "ECO-22112": {
-    "semestre": 7,
-    "nombre": "Macroeconomía Dinámica I",
-    "creditos": 6,
-    "prerreqs": [
-      "MAT-24100",
-      "ECO-11023",
-      "ECO-12012"
-    ],
-    "coreqs": [],
-    "estado": 0
-  },
   "ECO-11024": {
     "semestre": 7,
     "nombre": "Tópicos Avanzados de Microeconomía",
@@ -555,54 +522,75 @@
     "coreqs": [],
     "estado": 0
   },
-  "CON-14100": {
-    "semestre": 6,
-    "nombre": "Contabilidad Administrativa I",
-    "creditos": 9,
-    "prerreqs": [
-      "CON-10110"
-    ],
+  "OPTATIVA-1": {
+    "semestre": 9,
+    "nombre": "Optativa I",
+    "creditos": 6,
+    "prerreqs": [],
     "coreqs": [],
     "estado": 0
   },
-  "ADM-15562": {
+  "OPTATIVA-2": {
+    "semestre": 9,
+    "nombre": "Optativa II",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-3": {
+    "semestre": 9,
+    "nombre": "Optativa III",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-4": {
+    "semestre": 9,
+    "nombre": "Optativa IV",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "AREA-1": {
+    "semestre": 6,
+    "nombre": "Materia 1 de Área de Concentración",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "AREA-2": {
     "semestre": 7,
-    "nombre": "Finanzas en los Negocios II",
+    "nombre": "Materia 2 de Área de Concentración",
     "creditos": 6,
-    "prerreqs": [
-      "ADM-15561"
-    ],
+    "prerreqs": [],
     "coreqs": [],
     "estado": 0
   },
-  "CON-14109": {
-    "semestre": 6,
-    "nombre": "Contabilidad Gerencial",
-    "creditos": 6,
-    "prerreqs": [
-      "CON-10110"
-    ],
-    "coreqs": [],
-    "estado": 0
-  },
-  "ADM-13450": {
+  "AREA-3": {
     "semestre": 7,
-    "nombre": "Emprendimiento",
+    "nombre": "Materia 3 de Área de Concentración",
     "creditos": 6,
-    "prerreqs": [
-      "CON-10110",
-      "ECO-10522"
-    ],
+    "prerreqs": [],
     "coreqs": [],
     "estado": 0
   },
-  "COM-12101": {
-    "semestre": 6,
-    "nombre": "Bases de Datos",
-    "creditos": 8,
-    "prerreqs": [
-      "COM-16305"
-    ],
+  "AREA-4": {
+    "semestre": 8,
+    "nombre": "Materia 4 de Área de Concentración",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "AREA-5": {
+    "semestre": 8,
+    "nombre": "Materia 5 de Área de Concentración",
+    "creditos": 6,
+    "prerreqs": [],
     "coreqs": [],
     "estado": 0
   }

@@ -172,7 +172,7 @@
   },
   "IIO-15130": {
     "semestre": 4,
-    "nombre": "Química Fundamentos de",
+    "nombre": "Fundamentos de Química",
     "creditos": 11,
     "prerreqs": [],
     "coreqs": [],
@@ -200,7 +200,7 @@
   },
   "MAT-14102": {
     "semestre": 4,
-    "nombre": "III Cálculo Diferencial e Integral",
+    "nombre": "Cálculo Diferencial e Integral III",
     "creditos": 8,
     "prerreqs": [
       "MAT-14101",
@@ -276,8 +276,8 @@
     "nombre": "Probs. de la Real. Mex. Contemp.",
     "creditos": 6,
     "prerreqs": [
-      "EGN-17161",
-      "EGN-17142"
+      "EGN-17142",
+      "EGN-17161"
     ],
     "coreqs": [],
     "estado": 0
@@ -295,7 +295,7 @@
   },
   "ADM-14405": {
     "semestre": 6,
-    "nombre": "I Estruct. Proc. y Comp. Org.",
+    "nombre": "Estruct. Proc. y Comp. Org. I",
     "creditos": 6,
     "prerreqs": [
       "ADM-12107"
@@ -391,7 +391,7 @@
   },
   "ADM-16601": {
     "semestre": 7,
-    "nombre": "I Mercadotecnia",
+    "nombre": "Mercadotecnia I",
     "creditos": 6,
     "prerreqs": [
       "EST-11101"
@@ -557,7 +557,7 @@
   },
   "IIO-14160": {
     "semestre": 10,
-    "nombre": "Planta Diseño de",
+    "nombre": "Diseño de Planta",
     "creditos": 6,
     "prerreqs": [
       "IIO-13150"
@@ -583,6 +583,22 @@
       "ADM-15510",
       "ADM-16610"
     ],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-1": {
+    "semestre": 11,
+    "nombre": "Optativa I",
+    "creditos": 6,
+    "prerreqs": [],
+    "coreqs": [],
+    "estado": 0
+  },
+  "OPTATIVA-2": {
+    "semestre": 11,
+    "nombre": "Optativa II",
+    "creditos": 6,
+    "prerreqs": [],
     "coreqs": [],
     "estado": 0
   }
