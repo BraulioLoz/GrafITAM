@@ -41,6 +41,7 @@ export interface ScheduleState {
   clearGroup: (courseId: string) => void
   autoAssign: (courseIds: string[]) => void
   resetSchedule: () => void
+  clearPeriodoSchedule: () => void
 
   createSchedule: (name?: string) => void
   renameSchedule: (id: string, name: string) => void

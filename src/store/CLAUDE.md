@@ -104,6 +104,7 @@ Persisten `selectedPeriodo`, `schedulesByPeriodo` y `activeScheduleIdByPeriodo` 
 - `selectGroup(courseId, crn)` / `clearGroup(courseId)` — el usuario elige a mano qué grupo llevar por materia, sobre el horario activo.
 - `autoAssign(courseIds)` — corre `autoAssignSchedule` (`src/algorithms/scheduleAssign.ts`) sobre el subconjunto de `groupsByCourse` filtrado a `courseIds` y **reemplaza** el `selectedGroups` del horario activo con el resultado. Ver nota de `scheduleAssign.ts` en `src/algorithms/CLAUDE.md` sobre por qué `courseIds` es obligatorio.
 - `resetSchedule()` — limpia el `selectedGroups` del horario activo (no toca `groupsByCourse` ni otros horarios guardados).
+- `clearPeriodoSchedule()` — resetea **todo** el periodo activo: reemplaza `schedulesByPeriodo[periodo]` por un solo `SavedSchedule` vacío ("Opción A"), lo vuelve activo, y vacía `manualCourseIdsByPeriodo[periodo]`. No toca otros periodos. Pensado como "empezar de cero" manual, ya que cambiar de plan en `curriculumStore` nunca dispara esto (dominios independientes, ver arriba).
 - `createSchedule(name?)` — agrega un `SavedSchedule` vacío al periodo actual y lo vuelve activo.
 - `renameSchedule(id, name)` / `deleteSchedule(id)` — `deleteSchedule` es no-op si es el último horario del periodo (siempre debe quedar al menos uno).
 - `duplicateSchedule(id, newName?)` — clona un horario existente (incluye su `selectedGroups`) como uno nuevo activo; pensado como respaldo antes de intentar inscribirse.

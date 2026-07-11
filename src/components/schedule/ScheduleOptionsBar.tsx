@@ -9,6 +9,7 @@ export default function ScheduleOptionsBar() {
   const deleteSchedule = useScheduleStore((s) => s.deleteSchedule)
   const duplicateSchedule = useScheduleStore((s) => s.duplicateSchedule)
   const setActiveSchedule = useScheduleStore((s) => s.setActiveSchedule)
+  const clearPeriodoSchedule = useScheduleStore((s) => s.clearPeriodoSchedule)
 
   if (!selectedPeriodo) return null
   const schedules = schedulesByPeriodo[selectedPeriodo] ?? []
@@ -79,6 +80,22 @@ export default function ScheduleOptionsBar() {
           className="rounded px-2 py-1 text-xs font-semibold border border-dashed border-itam-muted text-itam-dark"
         >
           + Nueva opción
+        </button>
+
+        <button
+          onClick={() => {
+            if (
+              window.confirm(
+                '¿Limpiar todo el horario de este periodo? Se perderán todos los horarios guardados y las materias agregadas por búsqueda.',
+              )
+            ) {
+              clearPeriodoSchedule()
+            }
+          }}
+          className="rounded px-2 py-1 text-xs font-semibold border border-itam-muted text-itam-dark"
+          title="Borra todos los horarios guardados y materias agregadas por búsqueda de este periodo"
+        >
+          Limpiar horario
         </button>
       </div>
     </div>

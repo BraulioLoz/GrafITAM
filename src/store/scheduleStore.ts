@@ -89,6 +89,18 @@ export const useScheduleStore = create<ScheduleState>()(
           writeActiveSelectedGroups(selectedPeriodo, {})
         },
 
+        clearPeriodoSchedule: () => {
+          const { selectedPeriodo, schedulesByPeriodo, activeScheduleIdByPeriodo, manualCourseIdsByPeriodo } = get()
+          if (!selectedPeriodo) return
+          const fresh = defaultSchedule()
+          set({
+            schedulesByPeriodo: { ...schedulesByPeriodo, [selectedPeriodo]: [fresh] },
+            activeScheduleIdByPeriodo: { ...activeScheduleIdByPeriodo, [selectedPeriodo]: fresh.id },
+            manualCourseIdsByPeriodo: { ...manualCourseIdsByPeriodo, [selectedPeriodo]: [] },
+            selectedGroups: {},
+          })
+        },
+
         createSchedule: (name) => {
           const { selectedPeriodo, schedulesByPeriodo, activeScheduleIdByPeriodo } = get()
           if (!selectedPeriodo) return
