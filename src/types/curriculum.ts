@@ -25,6 +25,9 @@ export interface PlanMeta {
   filename: string
   program: string
   letter: string
+  /** Label en Title Case (ej. "Riesgos Financieros") si el plan tiene área de
+   * concentración — solo la familia ACT/ECD/ECO/EDF la trae. */
+  area?: string
 }
 
 export type ProgramIndex = Record<string, string[]>
