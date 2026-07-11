@@ -5,6 +5,7 @@ import { loadPlanData, programIndex } from '../data/loader'
 import { approveWithAncestors } from '../algorithms/dfsApprove'
 import { unapproveDescendants } from '../algorithms/unapproveDescendants'
 import { validateTopology } from '../algorithms/topoValidate'
+import { clearPlannedWhereApproved } from '../algorithms/enforceInvariant'
 
 export const useCurriculumStore = create<CurriculumState>()(
   persist(
@@ -46,11 +47,8 @@ export const useCurriculumStore = create<CurriculumState>()(
           for (const partnerId of course.coreqGroup) {
             next = approveWithAncestors(partnerId, planData, next)
           }
-          // Clear planned status for newly approved courses
-          next[courseId] = { ...next[courseId], planeada: false }
-          for (const partnerId of course.coreqGroup) {
-            if (next[partnerId]) next[partnerId] = { ...next[partnerId], planeada: false }
-          }
+          // Invariante: aprobada XOR planeada (incluye ancestros auto-aprobados)
+          next = clearPlannedWhereApproved(next)
         } else {
           next[courseId] = { ...next[courseId], aprobada: false }
           for (const partnerId of course.coreqGroup) {
@@ -102,11 +100,7 @@ export const useCurriculumStore = create<CurriculumState>()(
           }
 
           // Invariante: aprobada XOR planeada (después de todas las aprobaciones)
-          for (const id of Object.keys(next)) {
-            if (next[id]?.aprobada && next[id]?.planeada) {
-              next[id] = { ...next[id], planeada: false }
-            }
-          }
+          next = clearPlannedWhereApproved(next)
 
           next[courseId] = { ...next[courseId], planeada: true, aprobada: false }
 

@@ -1,5 +1,7 @@
 # Especificación Técnica y Arquitectura: DAG-Plan (ITAM)
 
+> **Documento histórico (pre-implementación).** Varios detalles aquí ya no reflejan el código real (React Flow "v11+" → hoy `@xyflow/react` ^12; `@dagrejs/dagre` como motor activo → hoy es grid manual; el schema JSON con `plan_id`/`subjects`/`total_credits_required` → hoy es un archivo por plan con schema plano, ver `CLAUDE.md`). Se conserva como registro de las decisiones de diseño originales. Para el estado actual del proyecto, usar `CLAUDE.md` y los sub-`CLAUDE.md` de `src/`.
+
 ## 1. Stack Tecnológico y Entorno
 
 * **Entorno de Desarrollo:** Vite para la compilación, ejecutado en entornos locales (VS Code o Cursor).

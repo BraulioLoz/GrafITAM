@@ -8,12 +8,16 @@ export function validateTopology(
   const errors: ValidationError[] = []
 
   for (const [courseId, course] of Object.entries(planData)) {
+    if (userState[courseId]?.aprobada) continue
+
     const courseSem =
       userState[courseId]?.semestrePlaneado ?? course.semestre
 
     for (const prereqId of course.prerreqs) {
       const prereqCourse = planData[prereqId]
       if (!prereqCourse) continue
+      if (userState[prereqId]?.aprobada) continue
+
       const prereqSem =
         userState[prereqId]?.semestrePlaneado ?? prereqCourse.semestre
 

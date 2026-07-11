@@ -1,6 +1,8 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import PlanSelector from './components/PlanSelector'
 import FlowCanvas from './components/FlowCanvas'
+import ScheduleTab from './components/schedule/ScheduleTab'
+import ReportIssueModal from './components/schedule/ReportIssueModal'
 import { useCurriculumStore } from './store/curriculumStore'
 import bgDesktop from './assets/bg-desktop.png'
 import bgMobile from './assets/bg-mobile.png'
@@ -9,6 +11,7 @@ export default function App() {
   const activePlan = useCurriculumStore((s) => s.activePlan)
   const planData = useCurriculumStore((s) => s.planData)
   const loadPlan = useCurriculumStore((s) => s.loadPlan)
+  const [tab, setTab] = useState<'plan' | 'horario'>('plan')
 
   useEffect(() => {
     if (activePlan && !planData) {
@@ -39,10 +42,37 @@ export default function App() {
           </p>
         </div>
         <PlanSelector />
+        <div className="flex gap-1 px-4 bg-cream-50 border-b border-cream-300">
+          <button
+            onClick={() => setTab('plan')}
+            className="text-xs px-3 py-1.5 font-semibold border-b-2"
+            style={{
+              borderColor: tab === 'plan' ? '#1E5E4B' : 'transparent',
+              color: tab === 'plan' ? '#1E5E4B' : '#8CA699',
+            }}
+          >
+            Plan de Estudios
+          </button>
+          <button
+            onClick={() => setTab('horario')}
+            className="text-xs px-3 py-1.5 font-semibold border-b-2"
+            style={{
+              borderColor: tab === 'horario' ? '#1E5E4B' : 'transparent',
+              color: tab === 'horario' ? '#1E5E4B' : '#8CA699',
+            }}
+          >
+            Planear Horario
+          </button>
+          <div className="ml-auto flex items-center py-1">
+            <ReportIssueModal />
+          </div>
+        </div>
       </header>
 
       <main className="flex-1 overflow-hidden">
-        {planData ? (
+        {tab === 'horario' ? (
+          <ScheduleTab />
+        ) : planData ? (
           <FlowCanvas />
         ) : (
           <div className="flex flex-col items-center justify-center h-full gap-2 opacity-40" style={{ color: '#0D3B2E' }}>
