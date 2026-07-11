@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const GITHUB_REPO = 'BraulioLoz/GrafITAM'
+const GITHUB_REPO = 'ITAM-Datalab/GrafITAM'
 
 type TipoProblema = 'materia_faltante' | 'grupo_incorrecto' | 'plan_faltante' | 'otro'
 

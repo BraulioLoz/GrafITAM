@@ -51,7 +51,7 @@ Test (`scheduleExport.test.ts`) simula las APIs de navegador (`Blob`, `URL.creat
 
 ## `ReportIssueModal.tsx`
 
-Botón "¿No encuentras tu materia, grupo o plan?" que abre un modal (tipo de problema, clave de materia, nombre, grupo/CRN, carrera/plan, comentario). Al enviar arma una URL `github.com/BraulioLoz/GrafITAM/issues/new?title=...&body=...` prellenada y la abre en pestaña nueva — el usuario le da clic a "Submit" del lado de GitHub. Cero backend propio; no se pueden adjuntar PDFs vía querystring, solo describir el plan/carrera en texto.
+Botón "¿No encuentras tu materia, grupo o plan?" que abre un modal (tipo de problema, clave de materia, nombre, grupo/CRN, carrera/plan, comentario). Al enviar arma una URL `github.com/ITAM-Datalab/GrafITAM/issues/new?title=...&body=...` prellenada y la abre en pestaña nueva — el usuario le da clic a "Submit" del lado de GitHub. Cero backend propio; no se pueden adjuntar PDFs vía querystring, solo describir el plan/carrera en texto.
 
 Vive en el header de `App.tsx` (junto al tab-switcher, alineado a la derecha), no en el sidebar de `ScheduleTab` — así queda accesible sin importar en qué pestaña estés (Plan de Estudios u Horario). No depende de ningún store ni prop, así que el montaje es independiente de la pestaña activa.
 
