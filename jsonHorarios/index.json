@@ -3,21 +3,21 @@
     "slug": "primavera_2026_licenciatura",
     "label": "PRIMAVERA 2026 LICENCIATURA",
     "sCode": "2938",
-    "scrapedAt": "2026-07-12T10:05:48.381825+00:00",
+    "scrapedAt": "2026-07-13T11:35:15.524382+00:00",
     "materiasConGrupos": 503
   },
   {
     "slug": "verano_2026_licenciatura",
     "label": "VERANO 2026 LICENCIATURA",
     "sCode": "3007",
-    "scrapedAt": "2026-07-12T10:06:09.488836+00:00",
+    "scrapedAt": "2026-07-13T11:35:36.262232+00:00",
     "materiasConGrupos": 46
   },
   {
     "slug": "otono_2026_licenciatura",
     "label": "OTOÑO 2026 LICENCIATURA",
     "sCode": "3077",
-    "scrapedAt": "2026-07-12T10:10:07.190213+00:00",
+    "scrapedAt": "2026-07-13T11:39:30.327392+00:00",
     "materiasConGrupos": 525
   }
 ]
