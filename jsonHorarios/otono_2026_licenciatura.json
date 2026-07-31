@@ -1903,6 +1903,18 @@
       "salon": "RH206"
     }
   ],
+  "CLE-10603": [
+    {
+      "campus": "RIO HONDO",
+      "crn": "3121",
+      "dias": "MA",
+      "grupo": "001",
+      "horario": "14:30-16:00",
+      "nombre": "ESTUDIA CON EXITO EN EL ITAM",
+      "profesor": "MARCELA RABADAN GALLARDO",
+      "salon": "RHCUBIC"
+    }
+  ],
   "COM-11102": [
     {
       "campus": "RIO HONDO",
@@ -5511,20 +5523,20 @@
       "crn": "2885",
       "dias": "MA JU",
       "grupo": "001",
-      "horario": "08:30-10:00",
+      "horario": "11:30-13:00",
       "nombre": "HISTORIA DEL DERECHO",
       "profesor": "JULIO ANTONIO RIOS FIGUEROA",
-      "salon": "RH205"
+      "salon": "RHB-1"
     },
     {
       "campus": "RIO HONDO",
       "crn": "2886",
       "dias": "MA JU",
       "grupo": "002",
-      "horario": "08:30-10:00",
+      "horario": "13:00-14:30",
       "nombre": "HISTORIA DEL DERECHO",
       "profesor": "RAYMUNDO GAMA LEYVA",
-      "salon": "RH313"
+      "salon": "RHB-1"
     },
     {
       "campus": "RIO HONDO",
@@ -5543,10 +5555,10 @@
       "crn": "2888",
       "dias": "MA JU",
       "grupo": "001",
-      "horario": "08:30-10:00",
+      "horario": "11:30-13:00",
       "nombre": "HISTORIA DEL DERECHO MEXICANO",
       "profesor": "JULIO ANTONIO RIOS FIGUEROA",
-      "salon": "RH205"
+      "salon": "RHB-1"
     }
   ],
   "DER-12204": [
